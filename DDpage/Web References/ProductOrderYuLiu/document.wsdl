@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:sap-com:document:sap:rfc:functions" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl" />
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="BN_BN_ZZXPRODUCTRESB">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+    <saptrnbnd:OptimizedMimeSerialization xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true" />
+    <wsp:ExactlyOne xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" />
+    <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BN_BN_ZZXPRODUCTRESB_SOAP12">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+    <saptrnbnd:OptimizedMimeSerialization xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true" />
+    <wsp:ExactlyOne xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" />
+    <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_IF_ZZXPRODUCTRESB">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/" wsp:Optional="true">
+      <sapcentraladmin:BusinessApplicationID>6CAE8B779C8C1ED993EEE83B53C83D86</sapcentraladmin:BusinessApplicationID>
+    </sapcentraladmin:CentralAdministration>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_ZPP_RESB">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char220">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="220" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char40">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="40" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char8">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="8" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char9">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="9" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="quantum13.3">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="13" />
+          <xsd:fractionDigits value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="unit3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ZPP_RESB">
+        <xsd:sequence>
+          <xsd:element name="AUFNR" type="tns:char12" />
+          <xsd:element name="BAUGR" type="tns:char18" />
+          <xsd:element name="VORNR" type="tns:char4" />
+          <xsd:element name="RSPOS" type="tns:numeric4" />
+          <xsd:element name="POSNR" type="tns:numeric6" />
+          <xsd:element name="PRODUCE_MAKTX" type="tns:char40" />
+          <xsd:element name="GAMNG" type="tns:quantum13.3" />
+          <xsd:element name="GMEIN" type="tns:unit3" />
+          <xsd:element name="AUFPL" type="tns:numeric10" />
+          <xsd:element name="RSNUM" type="tns:numeric10" />
+          <xsd:element name="MATNR" type="tns:char18" />
+          <xsd:element name="REQUIRE_MAKTX" type="tns:char40" />
+          <xsd:element name="BDMNG" type="tns:quantum13.3" />
+          <xsd:element name="ENMNG" type="tns:quantum13.3" />
+          <xsd:element name="MEINS" type="tns:unit3" />
+          <xsd:element name="BDTER" type="tns:date10" />
+          <xsd:element name="VAPLZ" type="tns:char8" />
+          <xsd:element name="WERKS" type="tns:char4" />
+          <xsd:element name="LGORT" type="tns:char4" />
+          <xsd:element name="MATKL" type="tns:char9" />
+          <xsd:element name="KDAUF" type="tns:char10" />
+          <xsd:element name="KDPOS" type="tns:numeric6" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TABLE_OF_ZPP_RESB">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZPP_RESB" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZPP_RESB">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="Z_AUFNR" type="tns:char12" />
+            <xsd:element name="Z_RESBINFO" type="tns:TABLE_OF_ZPP_RESB" />
+            <xsd:element minOccurs="0" name="Z_RSNUM" type="tns:numeric10" />
+            <xsd:element minOccurs="0" name="Z_VORNR" type="tns:char4" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZPP_RESBResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="E_MSGTX" type="tns:char220" />
+            <xsd:element name="E_MSGTY" type="tns:char1" />
+            <xsd:element name="Z_RESBINFO" type="tns:TABLE_OF_ZPP_RESB" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZPP_RESB">
+    <wsdl:part name="parameters" element="tns:ZPP_RESB" />
+  </wsdl:message>
+  <wsdl:message name="ZPP_RESBResponse">
+    <wsdl:part name="parameter" element="tns:ZPP_RESBResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ZZXPRODUCTRESB">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_IF_ZZXPRODUCTRESB" />
+    </wsp:Policy>
+    <wsdl:operation name="ZPP_RESB">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_ZPP_RESB" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZPP_RESB" />
+      <wsdl:output message="tns:ZPP_RESBResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZZXPRODUCTRESB" type="tns:ZZXPRODUCTRESB">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_BN_ZZXPRODUCTRESB" />
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZPP_RESB">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZZXPRODUCTRESB:ZPP_RESBRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ZZXPRODUCTRESB_SOAP12" type="tns:ZZXPRODUCTRESB">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_BN_ZZXPRODUCTRESB_SOAP12" />
+    </wsp:Policy>
+    <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZPP_RESB">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZZXPRODUCTRESB:ZPP_RESBRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZZXPRODUCTRESB">
+    <wsdl:port name="ZZXPRODUCTRESB" binding="tns:ZZXPRODUCTRESB">
+      <soap:address location="http://ERPPRD.YANTAIMOON.COM:8001/sap/bc/srt/rfc/sap/zzxproductresb/800/zzxproductresb/zzxproductresb" />
+    </wsdl:port>
+    <wsdl:port name="ZZXPRODUCTRESB_SOAP12" binding="tns:ZZXPRODUCTRESB_SOAP12">
+      <wsoap12:address location="http://ERPPRD.YANTAIMOON.COM:8001/sap/bc/srt/rfc/sap/zzxproductresb/800/zzxproductresb/zzxproductresb" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

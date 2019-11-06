@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:p1="http://www.kocel.com/lims/zpp_goodsmvt_z04" xmlns:rfc="urn:sap-com:document:sap:rfc:functions" name="SI_ZPP_GOODSMVT_Z04" targetNamespace="http://www.kocel.com/lims/zpp_goodsmvt_z04" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation />
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="OP_SI_ZPP_GOODSMVT_Z04" />
+  <wsdl:types>
+    <xsd:schema xmlns="urn:sap-com:document:sap:rfc:functions" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="ZPP_GOODSMVT_Z04Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="ZSD_GOODSMVT_HEAD" type="rfc:TABLE_OF_ZSD_GOODSMVT_HEAD" />
+            <xsd:element minOccurs="0" name="ZSD_GOODSMVT_ITEM" type="rfc:TABLE_OF_ZSD_GOODSMVT_ITEM" />
+            <xsd:element name="Z_MSGTX" type="rfc:char220" />
+            <xsd:element name="Z_MSGTY" type="rfc:char1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZPP_GOODSMVT_Z04">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="ZSD_GOODSMVT_HEAD" type="rfc:TABLE_OF_ZSD_GOODSMVT_HEAD" />
+            <xsd:element minOccurs="0" name="ZSD_GOODSMVT_ITEM" type="rfc:TABLE_OF_ZSD_GOODSMVT_ITEM" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric5">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="5" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="quantum13.3">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="13" />
+          <xsd:fractionDigits value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char40">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="40" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char220">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="220" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="TABLE_OF_ZSD_GOODSMVT_HEAD">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="rfc:ZSD_GOODSMVT_HEAD" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZSD_GOODSMVT_ITEM">
+        <xsd:sequence>
+          <xsd:element name="RSNUM" type="rfc:numeric10" />
+          <xsd:element name="RSPOS" type="rfc:numeric4" />
+          <xsd:element name="AUFNR" type="rfc:char12" />
+          <xsd:element name="VORNR" type="rfc:char4" />
+          <xsd:element name="LGORT" type="rfc:char4" />
+          <xsd:element name="CHARG" type="rfc:char10" />
+          <xsd:element name="BDMNG" type="rfc:quantum13.3" />
+          <xsd:element name="WERKS" type="rfc:char4" />
+          <xsd:element name="MATNR" type="rfc:char40" />
+          <xsd:element name="PARGB" type="rfc:char4" />
+          <xsd:element name="SOBKZ" type="rfc:char1" />
+          <xsd:element name="VBELN" type="rfc:char10" />
+          <xsd:element name="POSNR" type="rfc:numeric6" />
+          <xsd:element name="MOV_WERKS" type="rfc:char4" />
+          <xsd:element name="MOV_LGORT" type="rfc:char4" />
+          <xsd:element name="EBELN" type="rfc:char10" />
+          <xsd:element name="EBELP" type="rfc:numeric5" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZSD_GOODSMVT_HEAD">
+        <xsd:sequence>
+          <xsd:element name="BWART" type="rfc:char3" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TABLE_OF_ZSD_GOODSMVT_ITEM">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="rfc:ZSD_GOODSMVT_ITEM" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="rfc.ZPP_GOODSMVT_Z04">
+    <wsdl:documentation />
+    <wsdl:part name="parameters" element="rfc:ZPP_GOODSMVT_Z04" />
+  </wsdl:message>
+  <wsdl:message name="rfc.ZPP_GOODSMVT_Z04Response">
+    <wsdl:documentation />
+    <wsdl:part name="parameter" element="rfc:ZPP_GOODSMVT_Z04Response" />
+  </wsdl:message>
+  <wsdl:portType name="SI_ZPP_GOODSMVT_Z04">
+    <wsdl:documentation />
+    <wsdl:operation name="SI_ZPP_GOODSMVT_Z04">
+      <wsdl:documentation />
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_SI_ZPP_GOODSMVT_Z04" />
+      </wsp:Policy>
+      <wsdl:input message="p1:rfc.ZPP_GOODSMVT_Z04" />
+      <wsdl:output message="p1:rfc.ZPP_GOODSMVT_Z04Response" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SI_ZPP_GOODSMVT_Z04Binding" type="p1:SI_ZPP_GOODSMVT_Z04">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <wsdl:operation name="SI_ZPP_GOODSMVT_Z04">
+      <operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <wsdl:input>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </wsdl:input>
+      <wsdl:output>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SI_ZPP_GOODSMVT_Z04Service">
+    <wsdl:port name="HTTP_Port" binding="p1:SI_ZPP_GOODSMVT_Z04Binding">
+      <address location="http://poprd1:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BS_LIMS_PRD&amp;receiverParty=&amp;receiverService=&amp;interface=SI_ZPP_GOODSMVT_Z04&amp;interfaceNamespace=http%3A%2F%2Fwww.kocel.com%2Flims%2Fzpp_goodsmvt_z04" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </wsdl:port>
+    <wsdl:port name="HTTPS_Port" binding="p1:SI_ZPP_GOODSMVT_Z04Binding">
+      <address location="https://poprd1:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BS_LIMS_PRD&amp;receiverParty=&amp;receiverService=&amp;interface=SI_ZPP_GOODSMVT_Z04&amp;interfaceNamespace=http%3A%2F%2Fwww.kocel.com%2Flims%2Fzpp_goodsmvt_z04" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

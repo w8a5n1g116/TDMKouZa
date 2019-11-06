@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="shortcut icon" href="../img/kocel.ico">
+    <title></title>
+    <link href="../css/Style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="head_box">
+        <img src="../img/logo.png" />
+    </div>
+
+    <div class="login_box">
+        <div class="login_tab">
+            <div class="active">
+                扫码登录
+            </div>
+            <div>
+                账户登录
+            </div>
+        </div>
+        <div class="qrcode">
+            <div id="qrcode">
+                <div class="overtime">
+                    <div class="btn">
+                        <img src="../img/Refresh.png" />
+                    </div>
+                </div>
+            </div>
+            <div>请使用钉钉扫码登录</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        版权所有 国家智能铸造产业创新中心 ©  2017 宁ICP备17001391号-1 
+    </div>
+
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery.qrcode.min.js"></script>
+    <script type="text/javascript">
+        var time, starttime,h,w;
+        var starttime = new Date();
+        $(function () {
+            remand(function (fd) {
+                var mydate = new Date();
+                var day = mydate.getDate();
+                if (day < 10)
+                    day="0"+day
+                var url = "xxxxx.aspx?code=" + day + mydate.getHours() + mydate.getMinutes() + fd;
+                $("#qrcode").find('canvas').remove();
+                re_qrcode(url);
+            });
+            h = $('#qrcode').height();
+            w = $('#qrcode').width();
+            
+            time=setInterval(function () {
+                times()
+            }, 1000);
+
+         
+            $("#qrcode .btn").on("webkitAnimationEnd", function () {
+                
+            });
+        });
+        function re_qrcode(code) {
+            $('#qrcode').qrcode({
+                render: "canvas", //也可以替换为table
+                foreground: "#333333",
+                background: "#FFF",
+                text: code
+            });
+        }
+
+        function remand(callback) {
+            var len = 12;
+            var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678'; // 默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1  
+            var maxPos = $chars.length;
+            var re = '';
+            for (i = 0; i < len; i++) {
+                re += $chars.charAt(Math.floor(Math.random() * maxPos));
+            }
+            callback(re)
+        }
+
+        function res_qrcode() {
+            $("#qrcode .btn").css({
+                "animation": "refresh 2s",
+                "-moz-animation": "refresh 2s", /* Firefox */
+                "-webkit-animation": "refresh 2s", /* Safari and Chrome */
+                "-o-animation": "refresh 2s" /* Opera */
+            });
+            setTimeout(function () {
+                remand(function (fd) {
+                    var url = "xxxxx.aspx?code=" + fd;
+                    $("#qrcode").find('canvas').remove();
+                    re_qrcode(url);
+                });
+                $(".overtime").css("display", "none");
+                $(".overtime .btn").remove();
+                starttime = new Date();
+                time = setInterval(function () {
+                    times()
+                }, 1000);
+            },2000);
+        }
+        function stop_time(){
+            clearInterval(time);
+        }
+        function times() {
+            var nowtime = new Date();
+            var time = nowtime - starttime;
+            var minute = parseInt(time / 1000 / 60 % 60);
+            var seconds = parseInt(time / 1000 % 60);
+            if (minute >= 10) {
+                stop_time();
+                $(".overtime").html('<div class="btn" onclick="res_qrcode()"><img src="../img/Refresh.png" /></div>');
+                $(".overtime").css({
+                    "height": h,
+                    "width": w,
+                    "display": "flex"
+                });
+            }
+        }
+    </script>
+</body>
+</html>

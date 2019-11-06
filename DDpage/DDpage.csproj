@@ -1,0 +1,2712 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{211C760C-80B0-4CDC-917A-3672FF215344}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DDpage</RootNamespace>
+    <AssemblyName>DDpage</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=2.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="api\ITServer\GetQueryDetail.aspx" />
+    <Content Include="api\ITServer\GetReportDetail.aspx" />
+    <Content Include="api\ITServer\GetReportList.aspx" />
+    <Content Include="api\ITServer\GetTaskDetail.aspx" />
+    <Content Include="api\ITServer\GetTastList.aspx" />
+    <Content Include="api\ITServer\GetTypeTh.aspx" />
+    <Content Include="api\ITServer\GetTypeTwo.aspx" />
+    <Content Include="api\ITServer\IT_ApplySubmit.aspx" />
+    <Content Include="api\ITServer\IT_AssessSubmit.aspx" />
+    <Content Include="api\ITServer\IT_ReportSubmit.aspx" />
+    <Content Include="api\kmbhgp\GetAuditDeptOne.aspx" />
+    <Content Include="api\kmbhgp\GetAuditPerOne.aspx" />
+    <Content Include="api\kmbhgp\GetLimsAuditList.aspx" />
+    <Content Include="api\kmbhgp\GetLimsDetail.aspx" />
+    <Content Include="api\kmbhgp\GetLimsDetailOne.aspx" />
+    <Content Include="api\kmbhgp\GetlimsQueryDetail.aspx" />
+    <Content Include="api\kmbhgp\GetlimsQueryList.aspx" />
+    <Content Include="api\kmbhgp\GetQueryDetail.aspx" />
+    <Content Include="api\kmbhgp\GetQueryList.aspx" />
+    <Content Include="api\kmbhgp\GetResDept.aspx" />
+    <Content Include="api\kmbhgp\PostLimsAuditOneSubmit.aspx" />
+    <Content Include="api\kmbhgp\PostLimsAuditThSubmit.aspx" />
+    <Content Include="api\kmbhgp\PostLimsAuditTwoSubmit.aspx" />
+    <Content Include="api\KmrStorage\checkInList_toDiBang1900.aspx" />
+    <Content Include="api\KmrStorage\checkInList_sumbit1900.aspx" />
+    <Content Include="api\KmrStorage\checkInList_sumbit_BL.aspx" />
+    <Content Include="api\KmrStorage\checkInList_sumbit.aspx" />
+    <Content Include="api\KmrStorage\checkListUpdate_sumbit.aspx" />
+    <Content Include="api\KmrStorage\checkList_sumbit.aspx" />
+    <Content Include="api\KmrStorage\confirmUpdate_sumbit_BL.aspx" />
+    <Content Include="api\KmrStorage\confirmUpdate_sumbit.aspx" />
+    <Content Include="api\KmrStorage\confirm_sumbit_BL.aspx" />
+    <Content Include="api\KmrStorage\confirm_sumbit.aspx" />
+    <Content Include="api\KmrStorage\deList_sumbit.aspx" />
+    <Content Include="api\KmrStorage\Get1900CarCode.aspx" />
+    <Content Include="api\KmrStorage\Get1900CarLots.aspx" />
+    <Content Include="api\KmrStorage\GetAllotQueryDetail_BL.aspx" />
+    <Content Include="api\KmrStorage\GetAllotQueryDetail.aspx" />
+    <Content Include="api\KmrStorage\GetAllotQueryInfo_BL.aspx" />
+    <Content Include="api\KmrStorage\GetAllotQueryInfo.aspx" />
+    <Content Include="api\KmrStorage\GetAppStat.aspx" />
+    <Content Include="api\KmrStorage\GetChargeList.aspx" />
+    <Content Include="api\KmrStorage\GetChDetail.aspx" />
+    <Content Include="api\KmrStorage\GetCheckInFacStock_BL.aspx" />
+    <Content Include="api\KmrStorage\GetCheckInFac_BL.aspx" />
+    <Content Include="api\KmrStorage\GetCheckInFac.aspx" />
+    <Content Include="api\KmrStorage\GetCheckInFacStock.aspx" />
+    <Content Include="api\KmrStorage\GetCheckInList_BL.aspx" />
+    <Content Include="api\KmrStorage\GetCheckInList.aspx" />
+    <Content Include="api\KmrStorage\GetCheckInStock.aspx" />
+    <Content Include="api\KmrStorage\GetChQueryDetail_BL.aspx" />
+    <Content Include="api\KmrStorage\GetChQueryDetail.aspx" />
+    <Content Include="api\KmrStorage\GetChQueryInfo.aspx" />
+    <Content Include="api\KmrStorage\GetComOutPlanBatchInventoryList_BL.aspx" />
+    <Content Include="api\KmrStorage\GetComPickInfo_BL_KuGuan.aspx" />
+    <Content Include="api\KmrStorage\GetPurchaseInfo1900.aspx" />
+    <Content Include="api\KmrStorage\GetSeriarsNumber.aspx" />
+    <Content Include="api\KmrStorage\GetWorkCenter.aspx" />
+    <Content Include="api\KmrStorage\GetComBatchBaseData.aspx" />
+    <Content Include="api\KmrStorage\GetComBatchInventoryList_BL.aspx" />
+    <Content Include="api\KmrStorage\GetComBatchInventoryList.aspx" />
+    <Content Include="api\KmrStorage\GetComCCBatchPickInfo_BL.aspx" />
+    <Content Include="api\KmrStorage\GetComCCBatchPickInfo.aspx" />
+    <Content Include="api\KmrStorage\GetComCCBatchQueryDetail_BL.aspx" />
+    <Content Include="api\KmrStorage\GetComCCBatchQueryDetail.aspx" />
+    <Content Include="api\KmrStorage\GetComConfDetail_BL.aspx" />
+    <Content Include="api\KmrStorage\GetComConfDetail.aspx" />
+    <Content Include="api\KmrStorage\GetComInventoryList.aspx" />
+    <Content Include="api\KmrStorage\GetComInventoryListUpdate_BL.aspx" />
+    <Content Include="api\KmrStorage\GetComInventoryListUpdate.aspx" />
+    <Content Include="api\KmrStorage\GetComOutPlanBatchInventoryList.aspx" />
+    <Content Include="api\KmrStorage\GetCompany.aspx" />
+    <Content Include="api\KmrStorage\GetCompanyList.aspx" />
+    <Content Include="api\KmrStorage\GetComPickInfo_BL.aspx" />
+    <Content Include="api\KmrStorage\GetComPickInfo.aspx" />
+    <Content Include="api\KmrStorage\GetComPlanStock_BL.aspx" />
+    <Content Include="api\KmrStorage\GetComPlanStock.aspx" />
+    <Content Include="api\KmrStorage\GetComQueryDetail_BL.aspx" />
+    <Content Include="api\KmrStorage\GetComQueryDetail.aspx" />
+    <Content Include="api\KmrStorage\GetComSapPlanList.aspx" />
+    <Content Include="api\KmrStorage\GetComStCode.aspx" />
+    <Content Include="api\KmrStorage\GetDeInfo.aspx" />
+    <Content Include="api\KmrStorage\GetDeLiList.aspx" />
+    <Content Include="api\KmrStorage\GetDept_BL.aspx" />
+    <Content Include="api\KmrStorage\GetDept.aspx" />
+    <Content Include="api\KmrStorage\GetDeptList.aspx" />
+    <Content Include="api\KmrStorage\GetDeQueryDetail.aspx" />
+    <Content Include="api\KmrStorage\GetDeQueryInfo.aspx" />
+    <Content Include="api\KmrStorage\GetInQueryDetail.aspx" />
+    <Content Include="api\KmrStorage\GetInventoryInfo.aspx" />
+    <Content Include="api\KmrStorage\GetInventoryList.aspx" />
+    <Content Include="api\KmrStorage\GetInventoryListUpdate.aspx" />
+    <Content Include="api\KmrStorage\GetInventoryStock.aspx" />
+    <Content Include="api\KmrStorage\GetlimsInfo.aspx" />
+    <Content Include="api\KmrStorage\GetMesOddNo.aspx" />
+    <Content Include="api\KmrStorage\GetPurchaseInfo_BL.aspx" />
+    <Content Include="api\KmrStorage\GetPurchaseInfo.aspx" />
+    <Content Include="api\KmrStorage\GetQueryDeclarePlanList.aspx" />
+    <Content Include="api\KmrStorage\GetQueryFac.aspx" />
+    <Content Include="api\KmrStorage\GetQueryInventoryList_BL.aspx" />
+    <Content Include="api\KmrStorage\GetQueryInventoryList.aspx" />
+    <Content Include="api\KmrStorage\GetQueryStock.aspx" />
+    <Content Include="api\KmrStorage\GetSapPickedInfo.aspx" />
+    <Content Include="api\KmrStorage\GetSapPlanList_BL.aspx" />
+    <Content Include="api\KmrStorage\GetSapPlanList.aspx" />
+    <Content Include="api\KmrStorage\GetCoastCenter.aspx" />
+    <Content Include="api\KmrStorage\GetSapVen.aspx" />
+    <Content Include="api\KmrStorage\GetStockQueryDetail.aspx" />
+    <Content Include="api\KmrStorage\GetStockInfo.aspx" />
+    <Content Include="api\KmrStorage\GetStockLiList.aspx" />
+    <Content Include="api\KmrStorage\GetStockQueryInfo.aspx" />
+    <Content Include="api\KmrStorage\GetVen.aspx" />
+    <Content Include="api\KmrStorage\GetVentureList.aspx" />
+    <Content Include="api\KmrStorage\MaterailSqlWeb.aspx" />
+    <Content Include="api\KmrStorage\MaterialSqlDetailWeb.aspx" />
+    <Content Include="api\KmrStorage\MaterialStockMoveInfoSql.aspx" />
+    <Content Include="api\KmrStorage\MaterialStockMoveSql.aspx" />
+    <Content Include="api\KmrStorage\materielList_sumbit.aspx" />
+    <Content Include="api\KmrStorage\pickTabList_sumbit_BL.aspx" />
+    <Content Include="api\KmrStorage\pickTabList_sumbit20180619.aspx" />
+    <Content Include="api\KmrStorage\pickTabList_sumbit.aspx" />
+    <Content Include="api\KmrStorage\Post_AllotSubmit_BL.aspx" />
+    <Content Include="api\KmrStorage\Post_AllotSubmit.aspx" />
+    <Content Include="api\KmrStorage\Post_CostCenterBatchSubmit_BL.aspx" />
+    <Content Include="api\KmrStorage\Post_CostCenterBatchSubmit.aspx" />
+    <Content Include="api\KmrStorage\Post_OutPlanBatchSubmit_BL.aspx" />
+    <Content Include="api\KmrStorage\Post_OutPlanBatchSubmit.aspx" />
+    <Content Include="api\KmrStorage\Post_ProjectPickSubmit_BL.aspx" />
+    <Content Include="api\KmrStorage\Post_ProjectPickSubmit.aspx" />
+    <Content Include="api\KmrStorage\sapList_sumbit.aspx" />
+    <Content Include="api\KmrStorage\SapMatConfirm.aspx" />
+    <Content Include="api\KmrStorage\stockList_sumbit.aspx" />
+    <Content Include="api\KmrStorage\test.aspx" />
+    <Content Include="api\KocelVI\GetAuditTh.aspx" />
+    <Content Include="api\KocelVI\GetAuditTwo.aspx" />
+    <Content Include="api\KocelVI\GetAuth.aspx" />
+    <Content Include="api\KocelVI\GetAuthInfo.aspx" />
+    <Content Include="api\KocelVI\GetCompany.aspx" />
+    <Content Include="api\KocelVI\GetDept.aspx" />
+    <Content Include="api\KocelVI\GetDetailAllStat.aspx" />
+    <Content Include="api\KocelVI\GetDetailOneStat.aspx" />
+    <Content Include="api\KocelVI\GetDetailThStat.aspx" />
+    <Content Include="api\KocelVI\GetDetailTwoStat.aspx" />
+    <Content Include="api\KocelVI\GetInfoList.aspx" />
+    <Content Include="api\KocelVI\GetPerson.aspx" />
+    <Content Include="api\KocelVI\GetResCompany.aspx" />
+    <Content Include="api\KocelVI\GetResDept.aspx" />
+    <Content Include="api\KocelVI\GetResPerson.aspx" />
+    <Content Include="api\KocelVI\GetTastList.aspx" />
+    <Content Include="api\KocelVI\PostApplySubmit.aspx" />
+    <Content Include="api\KocelVI\PostAuditOneSubmit.aspx" />
+    <Content Include="api\KocelVI\PostAuditThSubmit.aspx" />
+    <Content Include="api\KocelVI\PostAuditTwoSubmit.aspx" />
+    <Content Include="api\KocelVI\PostAuthInfo.aspx" />
+    <Content Include="api\KocelWageApp\GetAuditCompany.aspx" />
+    <Content Include="api\KocelWageApp\GetAuditDept.aspx" />
+    <Content Include="api\KocelWageApp\GetAuditFlow.aspx" />
+    <Content Include="api\KocelWageApp\GetAuth.aspx" />
+    <Content Include="api\KocelWageApp\GetCompany.aspx" />
+    <Content Include="api\KocelWageApp\GetCompanyRole.aspx" />
+    <Content Include="api\KocelWageApp\GetDept.aspx" />
+    <Content Include="api\KocelWageApp\GetDeptSalaryInfo.aspx" />
+    <Content Include="api\KocelWageApp\GetDetailOneStat.aspx" />
+    <Content Include="api\KocelWageApp\GetDetailTwoStat.aspx" />
+    <Content Include="api\KocelWageApp\GetFlowList.aspx" />
+    <Content Include="api\KocelWageApp\GetMonthSalaryInfo.aspx" />
+    <Content Include="api\KocelWageApp\GetPerson.aspx" />
+    <Content Include="api\KocelWageApp\GetSalaryMonth.aspx" />
+    <Content Include="api\KocelWageApp\GetTastList.aspx" />
+    <Content Include="api\KocelWageApp\GetTastQueryList.aspx" />
+    <Content Include="api\KocelWageApp\KWA_ApplySubmit.aspx" />
+    <Content Include="api\KocelWageApp\KWA_AuditOneReject.aspx" />
+    <Content Include="api\KocelWageApp\KWA_AuditOneSubmit.aspx" />
+    <Content Include="api\KocelWageApp\KWA_AuditTwoReject.aspx" />
+    <Content Include="api\KocelWageApp\KWA_AuditTwoSubmit.aspx" />
+    <Content Include="api\KocelWageApp\KWA_AuthSetSubmit.aspx" />
+    <Content Include="api\public\list.js" />
+    <Content Include="api\public\user_info.aspx" />
+    <Content Include="api\strictM\GetLabdApplyList.aspx" />
+    <Content Include="api\strictM\GetLabdCategory.aspx" />
+    <Content Include="api\strictM\GetLabdCom.aspx" />
+    <Content Include="api\strictM\GetLabdDept.aspx" />
+    <Content Include="api\strictM\GetLabdInfo.aspx" />
+    <Content Include="api\strictM\GetLabdInfoDetail.aspx" />
+    <Content Include="api\strictM\GetLabdInfoIdDetail.aspx" />
+    <Content Include="api\strictM\GetLabdItem.aspx" />
+    <Content Include="api\strictM\GetLabdPerson.aspx" />
+    <Content Include="api\strictM\GetLabdVen.aspx" />
+    <Content Include="api\strictM\PostApply.aspx" />
+    <Content Include="api\strictM\PostEntry.aspx" />
+    <Content Include="css\app.css" />
+    <Content Include="css\aui.css" />
+    <Content Include="css\demo.css" />
+    <Content Include="css\feedback.css" />
+    <Content Include="css\font\demo.css" />
+    <Content Include="css\font\iconfont.css" />
+    <Content Include="css\font\iconfont.js" />
+    <Content Include="css\font\iconfont.svg" />
+    <Content Include="css\font\IconFont_files\demo.css" />
+    <Content Include="css\font\IconFont_files\iconfont.css" />
+    <Content Include="css\font\page_plan.css" />
+    <Content Include="css\font_big\demo.css" />
+    <Content Include="css\font_big\demo_fontclass.html" />
+    <Content Include="css\font_big\demo_symbol.html" />
+    <Content Include="css\font_big\demo_unicode.html" />
+    <Content Include="css\font_big\iconfont.css" />
+    <Content Include="css\font_big\iconfont.js" />
+    <Content Include="css\font_big\iconfont.svg" />
+    <Content Include="css\iconfont.css" />
+    <Content Include="css\icons-extra.css" />
+    <Content Include="css\ITServer\demo.css" />
+    <Content Include="css\ITServer\demo_fontclass.html" />
+    <Content Include="css\ITServer\demo_symbol.html" />
+    <Content Include="css\ITServer\demo_unicode.html" />
+    <Content Include="css\ITServer\iconfont.css" />
+    <Content Include="css\ITServer\iconfont.js" />
+    <Content Include="css\ITServer\iconfont.svg" />
+    <Content Include="css\kmbhgp\demo.css" />
+    <Content Include="css\kmbhgp\demo_fontclass.html" />
+    <Content Include="css\kmbhgp\demo_symbol.html" />
+    <Content Include="css\kmbhgp\demo_unicode.html" />
+    <Content Include="css\kmbhgp\iconfont.css" />
+    <Content Include="css\kmbhgp\iconfont.js" />
+    <Content Include="css\kmbhgp\iconfont.svg" />
+    <Content Include="css\kmStorageExtra\demo.css" />
+    <Content Include="css\kmStorageExtra\demo_fontclass.html" />
+    <Content Include="css\kmStorageExtra\demo_symbol.html" />
+    <Content Include="css\kmStorageExtra\demo_unicode.html" />
+    <Content Include="css\kmStorageExtra\iconfont.css" />
+    <Content Include="css\kmStorageExtra\iconfont.js" />
+    <Content Include="css\kmStorageExtra\iconfont.svg" />
+    <Content Include="css\KocelVI\demo.css" />
+    <Content Include="css\KocelVI\demo_fontclass.html" />
+    <Content Include="css\KocelVI\demo_symbol.html" />
+    <Content Include="css\KocelVI\demo_unicode.html" />
+    <Content Include="css\KocelVI\iconfont.css" />
+    <Content Include="css\KocelVI\iconfont.js" />
+    <Content Include="css\KocelVI\iconfont.svg" />
+    <Content Include="css\KocelWageApp\demo.css" />
+    <Content Include="css\KocelWageApp\demo_fontclass.html" />
+    <Content Include="css\KocelWageApp\demo_symbol.html" />
+    <Content Include="css\KocelWageApp\demo_unicode.html" />
+    <Content Include="css\KocelWageApp\iconfont.css" />
+    <Content Include="css\KocelWageApp\iconfont.js" />
+    <Content Include="css\KocelWageApp\iconfont.svg" />
+    <Content Include="css\mobileSelect.css" />
+    <Content Include="css\mui.dtpicker.css" />
+    <Content Include="css\mui.imageviewer.css" />
+    <Content Include="css\mui.indexedlist.css" />
+    <Content Include="css\mui.listpicker.css" />
+    <Content Include="css\mui.min.css" />
+    <Content Include="css\mui.picker.all.css" />
+    <Content Include="css\mui.picker.css" />
+    <Content Include="css\mui.picker.min.css" />
+    <Content Include="css\mui.poppicker.css" />
+    <Content Include="css\public.css" />
+    <Content Include="css\Styles.css" />
+    <Content Include="DDpage\index.aspx" />
+    <Content Include="DD_example\HtmlPage1.html" />
+    <Content Include="DD_example\index.aspx" />
+    <Content Include="examples\accordion.html" />
+    <Content Include="examples\actionsheet-plus.html" />
+    <Content Include="examples\actionsheet.html" />
+    <Content Include="examples\ad.html" />
+    <Content Include="examples\ajax.html" />
+    <Content Include="examples\badges.html" />
+    <Content Include="examples\beecloud.html" />
+    <Content Include="examples\best-practices\list-to-detail\detail.html" />
+    <Content Include="examples\best-practices\list-to-detail\list-to-detail.css" />
+    <Content Include="examples\best-practices\list-to-detail\listview.html" />
+    <Content Include="examples\best-practices\list-to-detail\vue.min.js" />
+    <Content Include="examples\buttons-with-badges.html" />
+    <Content Include="examples\buttons-with-block.html" />
+    <Content Include="examples\buttons-with-icons.html" />
+    <Content Include="examples\buttons-with-loading.html" />
+    <Content Include="examples\buttons.html" />
+    <Content Include="examples\card.html" />
+    <Content Include="examples\checkbox.html" />
+    <Content Include="examples\clouddb_wilddog.html" />
+    <Content Include="examples\date.html" />
+    <Content Include="examples\dialog.html" />
+    <Content Include="examples\dtpicker.html" />
+    <Content Include="examples\echarts.html" />
+    <Content Include="examples\feedback.html" />
+    <Content Include="examples\grid-default.html" />
+    <Content Include="examples\grid-pagination.html" />
+    <Content Include="examples\guide.html" />
+    <Content Include="examples\icons-extra.html" />
+    <Content Include="examples\icons.html" />
+    <Content Include="examples\im-chat.html" />
+    <Content Include="examples\imageviewer.html" />
+    <Content Include="examples\indexed-list-select.html" />
+    <Content Include="examples\indexed-list.html" />
+    <Content Include="examples\info.html" />
+    <Content Include="examples\input.html" />
+    <Content Include="examples\lazyload-image.html" />
+    <Content Include="examples\list-triplex-row.html" />
+    <Content Include="examples\list-with-input.html" />
+    <Content Include="examples\locker-dom.html" />
+    <Content Include="examples\login.html" />
+    <Content Include="examples\media-list.html" />
+    <Content Include="examples\message-bottom.html" />
+    <Content Include="examples\modals.html" />
+    <Content Include="examples\nav-nativeObj.html" />
+    <Content Include="examples\nav.html" />
+    <Content Include="examples\nav_transparent.html" />
+    <Content Include="examples\nav_transparent_native.html" />
+    <Content Include="examples\numbox.html" />
+    <Content Include="examples\offcanvas-drag-down.html" />
+    <Content Include="examples\offcanvas-drag-left-plus-main.html" />
+    <Content Include="examples\offcanvas-drag-left-plus-menu.html" />
+    <Content Include="examples\offcanvas-drag-left.html" />
+    <Content Include="examples\offcanvas-drag-right-plus-main.html" />
+    <Content Include="examples\offcanvas-drag-right-plus-menu.html" />
+    <Content Include="examples\offcanvas-drag-right.html" />
+    <Content Include="examples\pagination.html" />
+    <Content Include="examples\picker.html" />
+    <Content Include="examples\popovers.html" />
+    <Content Include="examples\progressbar.html" />
+    <Content Include="examples\pullrefresh.html" />
+    <Content Include="examples\pullrefresh_main.html" />
+    <Content Include="examples\pullrefresh_sub.html" />
+    <Content Include="examples\pullrefresh_with_tab.html" />
+    <Content Include="examples\radio.html" />
+    <Content Include="examples\range.html" />
+    <Content Include="examples\setting.html" />
+    <Content Include="examples\slider-default.html" />
+    <Content Include="examples\slider-native.html" />
+    <Content Include="examples\slider-table-default.html" />
+    <Content Include="examples\slider-table-pagination.html" />
+    <Content Include="examples\slider-with-title.html" />
+    <Content Include="examples\switches.html" />
+    <Content Include="examples\tab-top-subpage-1.html" />
+    <Content Include="examples\tab-top-subpage-2.html" />
+    <Content Include="examples\tab-top-subpage-3.html" />
+    <Content Include="examples\tab-top-subpage-4.html" />
+    <Content Include="examples\tab-top-subpage-5.html" />
+    <Content Include="examples\tab-top-webview-main.html" />
+    <Content Include="examples\tab-vertical-scroll.html" />
+    <Content Include="examples\tab-webview-main.html" />
+    <Content Include="examples\tab-webview-subpage-about.html" />
+    <Content Include="examples\tab-webview-subpage-chat.html" />
+    <Content Include="examples\tab-webview-subpage-contact.html" />
+    <Content Include="examples\tab-webview-subpage-setting.html" />
+    <Content Include="examples\tab-with-segmented-control-vertical.html" />
+    <Content Include="examples\tab-with-segmented-control.html" />
+    <Content Include="examples\tab-with-viewpagerindicator.html" />
+    <Content Include="examples\tabbar-labels-only.html" />
+    <Content Include="examples\tabbar-with-submenus.html" />
+    <Content Include="examples\tabbar.html" />
+    <Content Include="examples\tableviews-with-badges.html" />
+    <Content Include="examples\tableviews-with-collapses.html" />
+    <Content Include="examples\tableviews-with-swipe.html" />
+    <Content Include="examples\tableviews.html" />
+    <Content Include="examples\typography.html" />
+    <Content Include="images\01.jpg" />
+    <Content Include="images\05.jpg" />
+    <Content Include="images\60x60.gif" />
+    <Content Include="images\cbd.jpg" />
+    <Content Include="images\login-1.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\muwu.jpg" />
+    <Content Include="images\qrcode.png" />
+    <Content Include="images\shuijiao.jpg" />
+    <Content Include="images\working.jpg" />
+    <Content Include="images\yuantiao.jpg" />
+    <Content Include="img\logo.png" />
+    <Content Include="index-menu.html" />
+    <Content Include="index.html" />
+    <Content Include="js\95516.js" />
+    <Content Include="js\ad.js" />
+    <Content Include="js\api.js" />
+    <Content Include="js\arttmpl.js" />
+    <Content Include="js\aui-toast.js" />
+    <Content Include="js\beecloud.js" />
+    <Content Include="js\city.data-3.js" />
+    <Content Include="js\city.data.js" />
+    <Content Include="js\ddjs.js" />
+    <Content Include="js\dingtalk.js" />
+    <Content Include="js\feedback.js" />
+    <Content Include="js\jquery-1.11.0.min.js" />
+    <Content Include="js\mobileSelect.js" />
+    <Content Include="js\mobileSelect.min.js" />
+    <Content Include="js\mui.dtpicker.js" />
+    <Content Include="js\mui.imageViewer.js" />
+    <Content Include="js\mui.indexedlist.js" />
+    <Content Include="js\mui.js" />
+    <Content Include="js\mui.lazyload.img.js" />
+    <Content Include="js\mui.lazyload.js" />
+    <Content Include="js\mui.listpicker.js" />
+    <Content Include="js\mui.locker.js" />
+    <Content Include="js\mui.min.js" />
+    <Content Include="js\mui.picker.all.js" />
+    <Content Include="js\mui.picker.js" />
+    <Content Include="js\mui.picker.min.js" />
+    <Content Include="js\mui.poppicker.js" />
+    <Content Include="js\mui.previewimage.js" />
+    <Content Include="js\mui.pullToRefresh.js" />
+    <Content Include="js\mui.pullToRefresh.material.js" />
+    <Content Include="js\mui.view.js" />
+    <Content Include="js\mui.zoom.js" />
+    <Content Include="js\update.js" />
+    <Content Include="js\webviewGroup.js" />
+    <Content Include="KmrStorage\allot_stockList.aspx" />
+    <Content Include="KmrStorage\checkIn_tablist.aspx" />
+    <Content Include="KmrStorage\checkIn_tablist1900_submit.aspx" />
+    <Content Include="KmrStorage\checkIn_tablist1900.aspx" />
+    <Content Include="KmrStorage\check_tablist.aspx" />
+    <Content Include="KmrStorage\confirm_tablist.aspx" />
+    <Content Include="KmrStorage\costCenter_batchPicklist.aspx" />
+    <Content Include="KmrStorage\ddInfo.aspx" />
+    <Content Include="KmrStorage\de_tablist.aspx" />
+    <Content Include="KmrStorage\index20181010.aspx" />
+    <Content Include="KmrStorage\interfaceTest.aspx" />
+    <Content Include="KmrStorage\MaterailStockList.aspx" />
+    <Content Include="KmrStorage\MaterialListSel.aspx" />
+    <Content Include="KmrStorage\MaterialStockInfo.aspx" />
+    <Content Include="KmrStorage\MaterialStockMoveList.aspx" />
+    <Content Include="KmrStorage\MaterialStockMoveWeb.aspx" />
+    <Content Include="KmrStorage\outPlan_batchPicklist.aspx" />
+    <Content Include="KmrStorage\pickInCom_CostCenterlist.aspx" />
+    <Content Include="KmrStorage\pickInCom_InPlanlist.aspx" />
+    <Content Include="KmrStorage\pickInCom_OutPlanlist.aspx" />
+    <Content Include="KmrStorage\pickInCom_Researchlist.aspx" />
+    <Content Include="KmrStorage\pickOutCom_CostCenterlist.aspx" />
+    <Content Include="KmrStorage\pickOutCom_InPlanlist.aspx" />
+    <Content Include="KmrStorage\pickOutCom_OutPlanlist.aspx" />
+    <Content Include="KmrStorage\pick_saplist.aspx" />
+    <Content Include="KmrStorage\pick_tablist.aspx" />
+    <Content Include="KmrStorage\project_Picklist.aspx" />
+    <Content Include="KmrStorage\query_declarePlanList.aspx" />
+    <Content Include="KmrStorage\query_stockList.aspx" />
+    <Content Include="KmrStorage\stock_tablist.aspx" />
+    <Content Include="KmrStorage\index.aspx" />
+    <Content Include="KmrStorage\working.aspx" />
+    <Content Include="libs\echarts-all.js" />
+    <Content Include="css\kmbhgp\iconfont.eot" />
+    <Content Include="css\kmbhgp\iconfont.ttf" />
+    <Content Include="css\kmbhgp\iconfont.woff" />
+    <Content Include="css\KocelVI\iconfont.eot" />
+    <Content Include="css\KocelVI\iconfont.ttf" />
+    <Content Include="css\KocelVI\iconfont.woff" />
+    <Content Include="css\kmStorageExtra\iconfont.eot" />
+    <Content Include="css\kmStorageExtra\iconfont.ttf" />
+    <Content Include="css\kmStorageExtra\iconfont.woff" />
+    <Content Include="SRM\css\common.css" />
+    <Content Include="SRM\img\bannerNew.jpg" />
+    <Content Include="SRM\img\content01.jpg" />
+    <Content Include="SRM\img\icon_u15.png" />
+    <Content Include="SRM\img\icon_u18.png" />
+    <Content Include="SRM\img\icon_u25.png" />
+    <Content Include="SRM\img\img1.jpg" />
+    <Content Include="SRM\img\img2.jpg" />
+    <Content Include="SRM\img\img3.jpg" />
+    <Content Include="SRM\img\img4.jpg" />
+    <Content Include="SRM\img\img5.jpg" />
+    <Content Include="SRM\img\logo_index.png" />
+    <Content Include="SRM\img\loop01.jpg" />
+    <Content Include="SRM\img\loop02.jpg" />
+    <Content Include="SRM\SrmIndex.html" />
+    <Content Include="Web References\Get_KmrApp_Inventory\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\CoastCenter\document.wsdl" />
+    <Content Include="Web References\CoastCenter\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\CoastCenter\ZMM_GOODSMOVE_201Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\GetSapProductOrder\document.wsdl" />
+    <Content Include="Web References\GetSapProductOrder\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\GetSapProductOrder\ZzxGetorderconfirmationsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\Get_KmrApp_Inventory\SI_ZDM_INVENTORY_Sender.wsdl" />
+    <Content Include="Web References\Get_KmrApp_Inventory\ZDM_INVENTORYINFResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\Get_KmrApp_PurOrder\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\Get_KmrApp_PurOrder\SI_ZDM_EKES.wsdl" />
+    <Content Include="Web References\Get_KmrApp_PurOrder\ZDM_EKESResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\InnerOrder\document.wsdl" />
+    <Content Include="Web References\InnerOrder\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\InnerOrder\ZMM_MOVE_IORDERResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\InTimeStock\document.wsdl" />
+    <None Include="Web References\InTimeStock\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web References\InTimeStock\ZDM_REALTIMESTOREResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\KmrAppComPick\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\KmrAppComPick\SI_ZPP_GOODSMVT.wsdl" />
+    <Content Include="Web References\KmrAppComPick\ZPP_GOODSMVTResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\KmrAppMatCreateRsNo\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\KmrAppMatCreateRsNo\SI_ZPP_RESERVATION_CREATE_Sender.wsdl" />
+    <Content Include="Web References\KmrAppMatCreateRsNo\ZPP_RESERVATION_CREATEResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\KmrAppMatPick\BAPIRET2.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\KmrAppMatPick\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\KmrAppMatPick\SI_ZPP_MATERIAL_REQ.wsdl" />
+    <Content Include="Web References\KmrAppMatPick\ZSPP_MAREQ_ITEM.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\KmrAppMatPick\ZSPP_MAREQ_MSG.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\KmrAppMatSendToLineLib\KmrSendMatService.disco" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="api\ITServer\GetQueryDetail.aspx.cs">
+      <DependentUpon>GetQueryDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\ITServer\GetQueryDetail.aspx.designer.cs">
+      <DependentUpon>GetQueryDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\ITServer\GetReportDetail.aspx.cs">
+      <DependentUpon>GetReportDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\ITServer\GetReportDetail.aspx.designer.cs">
+      <DependentUpon>GetReportDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\ITServer\GetReportList.aspx.cs">
+      <DependentUpon>GetReportList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\ITServer\GetReportList.aspx.designer.cs">
+      <DependentUpon>GetReportList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\ITServer\GetTaskDetail.aspx.cs">
+      <DependentUpon>GetTaskDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\ITServer\GetTaskDetail.aspx.designer.cs">
+      <DependentUpon>GetTaskDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\ITServer\GetTastList.aspx.cs">
+      <DependentUpon>GetTastList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\ITServer\GetTastList.aspx.designer.cs">
+      <DependentUpon>GetTastList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\ITServer\GetTypeTh.aspx.cs">
+      <DependentUpon>GetTypeTh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\ITServer\GetTypeTh.aspx.designer.cs">
+      <DependentUpon>GetTypeTh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\ITServer\GetTypeTwo.aspx.cs">
+      <DependentUpon>GetTypeTwo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\ITServer\GetTypeTwo.aspx.designer.cs">
+      <DependentUpon>GetTypeTwo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\ITServer\IT_ApplySubmit.aspx.cs">
+      <DependentUpon>IT_ApplySubmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\ITServer\IT_ApplySubmit.aspx.designer.cs">
+      <DependentUpon>IT_ApplySubmit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\ITServer\IT_AssessSubmit.aspx.cs">
+      <DependentUpon>IT_AssessSubmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\ITServer\IT_AssessSubmit.aspx.designer.cs">
+      <DependentUpon>IT_AssessSubmit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\ITServer\IT_ReportSubmit.aspx.cs">
+      <DependentUpon>IT_ReportSubmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\ITServer\IT_ReportSubmit.aspx.designer.cs">
+      <DependentUpon>IT_ReportSubmit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\ITServer\MailClass.cs" />
+    <Compile Include="api\kmbhgp\GetAuditDeptOne.aspx.cs">
+      <DependentUpon>GetAuditDeptOne.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\kmbhgp\GetAuditDeptOne.aspx.designer.cs">
+      <DependentUpon>GetAuditDeptOne.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\kmbhgp\GetAuditPerOne.aspx.cs">
+      <DependentUpon>GetAuditPerOne.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\kmbhgp\GetAuditPerOne.aspx.designer.cs">
+      <DependentUpon>GetAuditPerOne.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\kmbhgp\GetLimsAuditList.aspx.cs">
+      <DependentUpon>GetLimsAuditList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\kmbhgp\GetLimsAuditList.aspx.designer.cs">
+      <DependentUpon>GetLimsAuditList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\kmbhgp\GetLimsDetail.aspx.cs">
+      <DependentUpon>GetLimsDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\kmbhgp\GetLimsDetail.aspx.designer.cs">
+      <DependentUpon>GetLimsDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\kmbhgp\GetLimsDetailOne.aspx.cs">
+      <DependentUpon>GetLimsDetailOne.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\kmbhgp\GetLimsDetailOne.aspx.designer.cs">
+      <DependentUpon>GetLimsDetailOne.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\kmbhgp\GetlimsQueryDetail.aspx.cs">
+      <DependentUpon>GetlimsQueryDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\kmbhgp\GetlimsQueryDetail.aspx.designer.cs">
+      <DependentUpon>GetlimsQueryDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\kmbhgp\GetlimsQueryList.aspx.cs">
+      <DependentUpon>GetlimsQueryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\kmbhgp\GetlimsQueryList.aspx.designer.cs">
+      <DependentUpon>GetlimsQueryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\kmbhgp\GetQueryDetail.aspx.cs">
+      <DependentUpon>GetQueryDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\kmbhgp\GetQueryDetail.aspx.designer.cs">
+      <DependentUpon>GetQueryDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\kmbhgp\GetQueryList.aspx.cs">
+      <DependentUpon>GetQueryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\kmbhgp\GetQueryList.aspx.designer.cs">
+      <DependentUpon>GetQueryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\kmbhgp\GetResDept.aspx.cs">
+      <DependentUpon>GetResDept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\kmbhgp\GetResDept.aspx.designer.cs">
+      <DependentUpon>GetResDept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\kmbhgp\PostLimsAuditOneSubmit.aspx.cs">
+      <DependentUpon>PostLimsAuditOneSubmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\kmbhgp\PostLimsAuditOneSubmit.aspx.designer.cs">
+      <DependentUpon>PostLimsAuditOneSubmit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\kmbhgp\PostLimsAuditThSubmit.aspx.cs">
+      <DependentUpon>PostLimsAuditThSubmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\kmbhgp\PostLimsAuditThSubmit.aspx.designer.cs">
+      <DependentUpon>PostLimsAuditThSubmit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\kmbhgp\PostLimsAuditTwoSubmit.aspx.cs">
+      <DependentUpon>PostLimsAuditTwoSubmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\kmbhgp\PostLimsAuditTwoSubmit.aspx.designer.cs">
+      <DependentUpon>PostLimsAuditTwoSubmit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\checkInList_toDiBang1900.aspx.cs">
+      <DependentUpon>checkInList_toDiBang1900.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\checkInList_toDiBang1900.aspx.designer.cs">
+      <DependentUpon>checkInList_toDiBang1900.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\checkInList_sumbit1900.aspx.cs">
+      <DependentUpon>checkInList_sumbit1900.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\checkInList_sumbit1900.aspx.designer.cs">
+      <DependentUpon>checkInList_sumbit1900.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\checkInList_sumbit_BL.aspx.cs">
+      <DependentUpon>checkInList_sumbit_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\checkInList_sumbit_BL.aspx.designer.cs">
+      <DependentUpon>checkInList_sumbit_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\checkInList_sumbit.aspx.cs">
+      <DependentUpon>checkInList_sumbit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\checkInList_sumbit.aspx.designer.cs">
+      <DependentUpon>checkInList_sumbit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\checkListUpdate_sumbit.aspx.cs">
+      <DependentUpon>checkListUpdate_sumbit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\checkListUpdate_sumbit.aspx.designer.cs">
+      <DependentUpon>checkListUpdate_sumbit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\checkList_sumbit.aspx.cs">
+      <DependentUpon>checkList_sumbit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\checkList_sumbit.aspx.designer.cs">
+      <DependentUpon>checkList_sumbit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\confirmUpdate_sumbit_BL.aspx.cs">
+      <DependentUpon>confirmUpdate_sumbit_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\confirmUpdate_sumbit_BL.aspx.designer.cs">
+      <DependentUpon>confirmUpdate_sumbit_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\confirmUpdate_sumbit.aspx.cs">
+      <DependentUpon>confirmUpdate_sumbit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\confirmUpdate_sumbit.aspx.designer.cs">
+      <DependentUpon>confirmUpdate_sumbit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\confirm_sumbit_BL.aspx.cs">
+      <DependentUpon>confirm_sumbit_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\confirm_sumbit_BL.aspx.designer.cs">
+      <DependentUpon>confirm_sumbit_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\confirm_sumbit.aspx.cs">
+      <DependentUpon>confirm_sumbit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\confirm_sumbit.aspx.designer.cs">
+      <DependentUpon>confirm_sumbit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\deList_sumbit.aspx.cs">
+      <DependentUpon>deList_sumbit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\deList_sumbit.aspx.designer.cs">
+      <DependentUpon>deList_sumbit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\Get1900CarCode.aspx.cs">
+      <DependentUpon>Get1900CarCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\Get1900CarCode.aspx.designer.cs">
+      <DependentUpon>Get1900CarCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\Get1900CarLots.aspx.cs">
+      <DependentUpon>Get1900CarLots.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\Get1900CarLots.aspx.designer.cs">
+      <DependentUpon>Get1900CarLots.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetAllotQueryDetail_BL.aspx.cs">
+      <DependentUpon>GetAllotQueryDetail_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetAllotQueryDetail_BL.aspx.designer.cs">
+      <DependentUpon>GetAllotQueryDetail_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetAllotQueryDetail.aspx.cs">
+      <DependentUpon>GetAllotQueryDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetAllotQueryDetail.aspx.designer.cs">
+      <DependentUpon>GetAllotQueryDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetAllotQueryInfo_BL.aspx.cs">
+      <DependentUpon>GetAllotQueryInfo_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetAllotQueryInfo_BL.aspx.designer.cs">
+      <DependentUpon>GetAllotQueryInfo_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetAllotQueryInfo.aspx.cs">
+      <DependentUpon>GetAllotQueryInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetAllotQueryInfo.aspx.designer.cs">
+      <DependentUpon>GetAllotQueryInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetAppStat.aspx.cs">
+      <DependentUpon>GetAppStat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetAppStat.aspx.designer.cs">
+      <DependentUpon>GetAppStat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetChargeList.aspx.cs">
+      <DependentUpon>GetChargeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetChargeList.aspx.designer.cs">
+      <DependentUpon>GetChargeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetChDetail.aspx.cs">
+      <DependentUpon>GetChDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetChDetail.aspx.designer.cs">
+      <DependentUpon>GetChDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetCheckInFacStock_BL.aspx.cs">
+      <DependentUpon>GetCheckInFacStock_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetCheckInFacStock_BL.aspx.designer.cs">
+      <DependentUpon>GetCheckInFacStock_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetCheckInFac_BL.aspx.cs">
+      <DependentUpon>GetCheckInFac_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetCheckInFac_BL.aspx.designer.cs">
+      <DependentUpon>GetCheckInFac_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetCheckInFac.aspx.cs">
+      <DependentUpon>GetCheckInFac.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetCheckInFac.aspx.designer.cs">
+      <DependentUpon>GetCheckInFac.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetCheckInFacStock.aspx.cs">
+      <DependentUpon>GetCheckInFacStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetCheckInFacStock.aspx.designer.cs">
+      <DependentUpon>GetCheckInFacStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetCheckInList_BL.aspx.cs">
+      <DependentUpon>GetCheckInList_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetCheckInList_BL.aspx.designer.cs">
+      <DependentUpon>GetCheckInList_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetCheckInList.aspx.cs">
+      <DependentUpon>GetCheckInList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetCheckInList.aspx.designer.cs">
+      <DependentUpon>GetCheckInList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetCheckInStock.aspx.cs">
+      <DependentUpon>GetCheckInStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetCheckInStock.aspx.designer.cs">
+      <DependentUpon>GetCheckInStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetChQueryDetail_BL.aspx.cs">
+      <DependentUpon>GetChQueryDetail_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetChQueryDetail_BL.aspx.designer.cs">
+      <DependentUpon>GetChQueryDetail_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetChQueryDetail.aspx.cs">
+      <DependentUpon>GetChQueryDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetChQueryDetail.aspx.designer.cs">
+      <DependentUpon>GetChQueryDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetChQueryInfo.aspx.cs">
+      <DependentUpon>GetChQueryInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetChQueryInfo.aspx.designer.cs">
+      <DependentUpon>GetChQueryInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComOutPlanBatchInventoryList_BL.aspx.cs">
+      <DependentUpon>GetComOutPlanBatchInventoryList_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComOutPlanBatchInventoryList_BL.aspx.designer.cs">
+      <DependentUpon>GetComOutPlanBatchInventoryList_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComPickInfo_BL_KuGuan.aspx.cs">
+      <DependentUpon>GetComPickInfo_BL_KuGuan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComPickInfo_BL_KuGuan.aspx.designer.cs">
+      <DependentUpon>GetComPickInfo_BL_KuGuan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetPurchaseInfo1900.aspx.cs">
+      <DependentUpon>GetPurchaseInfo1900.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetPurchaseInfo1900.aspx.designer.cs">
+      <DependentUpon>GetPurchaseInfo1900.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetSeriarsNumber.aspx.cs">
+      <DependentUpon>GetSeriarsNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetSeriarsNumber.aspx.designer.cs">
+      <DependentUpon>GetSeriarsNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetWorkCenter.aspx.cs">
+      <DependentUpon>GetWorkCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetWorkCenter.aspx.designer.cs">
+      <DependentUpon>GetWorkCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComBatchBaseData.aspx.cs">
+      <DependentUpon>GetComBatchBaseData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComBatchBaseData.aspx.designer.cs">
+      <DependentUpon>GetComBatchBaseData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComBatchInventoryList_BL.aspx.cs">
+      <DependentUpon>GetComBatchInventoryList_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComBatchInventoryList_BL.aspx.designer.cs">
+      <DependentUpon>GetComBatchInventoryList_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComBatchInventoryList.aspx.cs">
+      <DependentUpon>GetComBatchInventoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComBatchInventoryList.aspx.designer.cs">
+      <DependentUpon>GetComBatchInventoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComCCBatchPickInfo_BL.aspx.cs">
+      <DependentUpon>GetComCCBatchPickInfo_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComCCBatchPickInfo_BL.aspx.designer.cs">
+      <DependentUpon>GetComCCBatchPickInfo_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComCCBatchPickInfo.aspx.cs">
+      <DependentUpon>GetComCCBatchPickInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComCCBatchPickInfo.aspx.designer.cs">
+      <DependentUpon>GetComCCBatchPickInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComCCBatchQueryDetail_BL.aspx.cs">
+      <DependentUpon>GetComCCBatchQueryDetail_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComCCBatchQueryDetail_BL.aspx.designer.cs">
+      <DependentUpon>GetComCCBatchQueryDetail_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComCCBatchQueryDetail.aspx.cs">
+      <DependentUpon>GetComCCBatchQueryDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComCCBatchQueryDetail.aspx.designer.cs">
+      <DependentUpon>GetComCCBatchQueryDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComConfDetail_BL.aspx.cs">
+      <DependentUpon>GetComConfDetail_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComConfDetail_BL.aspx.designer.cs">
+      <DependentUpon>GetComConfDetail_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComConfDetail.aspx.cs">
+      <DependentUpon>GetComConfDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComConfDetail.aspx.designer.cs">
+      <DependentUpon>GetComConfDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComInventoryList.aspx.cs">
+      <DependentUpon>GetComInventoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComInventoryList.aspx.designer.cs">
+      <DependentUpon>GetComInventoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComInventoryListUpdate_BL.aspx.cs">
+      <DependentUpon>GetComInventoryListUpdate_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComInventoryListUpdate_BL.aspx.designer.cs">
+      <DependentUpon>GetComInventoryListUpdate_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComInventoryListUpdate.aspx.cs">
+      <DependentUpon>GetComInventoryListUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComInventoryListUpdate.aspx.designer.cs">
+      <DependentUpon>GetComInventoryListUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComOutPlanBatchInventoryList.aspx.cs">
+      <DependentUpon>GetComOutPlanBatchInventoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComOutPlanBatchInventoryList.aspx.designer.cs">
+      <DependentUpon>GetComOutPlanBatchInventoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetCompany.aspx.cs">
+      <DependentUpon>GetCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetCompany.aspx.designer.cs">
+      <DependentUpon>GetCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetCompanyList.aspx.cs">
+      <DependentUpon>GetCompanyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetCompanyList.aspx.designer.cs">
+      <DependentUpon>GetCompanyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComPickInfo_BL.aspx.cs">
+      <DependentUpon>GetComPickInfo_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComPickInfo_BL.aspx.designer.cs">
+      <DependentUpon>GetComPickInfo_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComPickInfo.aspx.cs">
+      <DependentUpon>GetComPickInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComPickInfo.aspx.designer.cs">
+      <DependentUpon>GetComPickInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComPlanStock_BL.aspx.cs">
+      <DependentUpon>GetComPlanStock_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComPlanStock_BL.aspx.designer.cs">
+      <DependentUpon>GetComPlanStock_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComPlanStock.aspx.cs">
+      <DependentUpon>GetComPlanStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComPlanStock.aspx.designer.cs">
+      <DependentUpon>GetComPlanStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComQueryDetail_BL.aspx.cs">
+      <DependentUpon>GetComQueryDetail_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComQueryDetail_BL.aspx.designer.cs">
+      <DependentUpon>GetComQueryDetail_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComQueryDetail.aspx.cs">
+      <DependentUpon>GetComQueryDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComQueryDetail.aspx.designer.cs">
+      <DependentUpon>GetComQueryDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComSapPlanList.aspx.cs">
+      <DependentUpon>GetComSapPlanList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComSapPlanList.aspx.designer.cs">
+      <DependentUpon>GetComSapPlanList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComStCode.aspx.cs">
+      <DependentUpon>GetComStCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetComStCode.aspx.designer.cs">
+      <DependentUpon>GetComStCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetDeInfo.aspx.cs">
+      <DependentUpon>GetDeInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetDeInfo.aspx.designer.cs">
+      <DependentUpon>GetDeInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetDeLiList.aspx.cs">
+      <DependentUpon>GetDeLiList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetDeLiList.aspx.designer.cs">
+      <DependentUpon>GetDeLiList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetDept_BL.aspx.cs">
+      <DependentUpon>GetDept_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetDept_BL.aspx.designer.cs">
+      <DependentUpon>GetDept_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetDept.aspx.cs">
+      <DependentUpon>GetDept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetDept.aspx.designer.cs">
+      <DependentUpon>GetDept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetDeptList.aspx.cs">
+      <DependentUpon>GetDeptList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetDeptList.aspx.designer.cs">
+      <DependentUpon>GetDeptList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetDeQueryDetail.aspx.cs">
+      <DependentUpon>GetDeQueryDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetDeQueryDetail.aspx.designer.cs">
+      <DependentUpon>GetDeQueryDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetDeQueryInfo.aspx.cs">
+      <DependentUpon>GetDeQueryInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetDeQueryInfo.aspx.designer.cs">
+      <DependentUpon>GetDeQueryInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetInQueryDetail.aspx.cs">
+      <DependentUpon>GetInQueryDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetInQueryDetail.aspx.designer.cs">
+      <DependentUpon>GetInQueryDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetInventoryInfo.aspx.cs">
+      <DependentUpon>GetInventoryInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetInventoryInfo.aspx.designer.cs">
+      <DependentUpon>GetInventoryInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetInventoryList.aspx.cs">
+      <DependentUpon>GetInventoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetInventoryList.aspx.designer.cs">
+      <DependentUpon>GetInventoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetInventoryListUpdate.aspx.cs">
+      <DependentUpon>GetInventoryListUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetInventoryListUpdate.aspx.designer.cs">
+      <DependentUpon>GetInventoryListUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetInventoryStock.aspx.cs">
+      <DependentUpon>GetInventoryStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetInventoryStock.aspx.designer.cs">
+      <DependentUpon>GetInventoryStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetlimsInfo.aspx.cs">
+      <DependentUpon>GetlimsInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetlimsInfo.aspx.designer.cs">
+      <DependentUpon>GetlimsInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetMesOddNo.aspx.cs">
+      <DependentUpon>GetMesOddNo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetMesOddNo.aspx.designer.cs">
+      <DependentUpon>GetMesOddNo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetPurchaseInfo_BL.aspx.cs">
+      <DependentUpon>GetPurchaseInfo_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetPurchaseInfo_BL.aspx.designer.cs">
+      <DependentUpon>GetPurchaseInfo_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetPurchaseInfo.aspx.cs">
+      <DependentUpon>GetPurchaseInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetPurchaseInfo.aspx.designer.cs">
+      <DependentUpon>GetPurchaseInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetQueryDeclarePlanList.aspx.cs">
+      <DependentUpon>GetQueryDeclarePlanList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetQueryDeclarePlanList.aspx.designer.cs">
+      <DependentUpon>GetQueryDeclarePlanList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetQueryFac.aspx.cs">
+      <DependentUpon>GetQueryFac.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetQueryFac.aspx.designer.cs">
+      <DependentUpon>GetQueryFac.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetQueryInventoryList_BL.aspx.cs">
+      <DependentUpon>GetQueryInventoryList_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetQueryInventoryList_BL.aspx.designer.cs">
+      <DependentUpon>GetQueryInventoryList_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetQueryInventoryList.aspx.cs">
+      <DependentUpon>GetQueryInventoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetQueryInventoryList.aspx.designer.cs">
+      <DependentUpon>GetQueryInventoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetQueryStock.aspx.cs">
+      <DependentUpon>GetQueryStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetQueryStock.aspx.designer.cs">
+      <DependentUpon>GetQueryStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetSapPickedInfo.aspx.cs">
+      <DependentUpon>GetSapPickedInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetSapPickedInfo.aspx.designer.cs">
+      <DependentUpon>GetSapPickedInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetSapPlanList_BL.aspx.cs">
+      <DependentUpon>GetSapPlanList_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetSapPlanList_BL.aspx.designer.cs">
+      <DependentUpon>GetSapPlanList_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetSapPlanList.aspx.cs">
+      <DependentUpon>GetSapPlanList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetSapPlanList.aspx.designer.cs">
+      <DependentUpon>GetSapPlanList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetCoastCenter.aspx.cs">
+      <DependentUpon>GetCoastCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetCoastCenter.aspx.designer.cs">
+      <DependentUpon>GetCoastCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetSapVen.aspx.cs">
+      <DependentUpon>GetSapVen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetSapVen.aspx.designer.cs">
+      <DependentUpon>GetSapVen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetStockQueryDetail.aspx.cs">
+      <DependentUpon>GetStockQueryDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetStockQueryDetail.aspx.designer.cs">
+      <DependentUpon>GetStockQueryDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetStockInfo.aspx.cs">
+      <DependentUpon>GetStockInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetStockInfo.aspx.designer.cs">
+      <DependentUpon>GetStockInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetStockLiList.aspx.cs">
+      <DependentUpon>GetStockLiList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetStockLiList.aspx.designer.cs">
+      <DependentUpon>GetStockLiList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetStockQueryInfo.aspx.cs">
+      <DependentUpon>GetStockQueryInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetStockQueryInfo.aspx.designer.cs">
+      <DependentUpon>GetStockQueryInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetVen.aspx.cs">
+      <DependentUpon>GetVen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetVen.aspx.designer.cs">
+      <DependentUpon>GetVen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetVentureList.aspx.cs">
+      <DependentUpon>GetVentureList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\GetVentureList.aspx.designer.cs">
+      <DependentUpon>GetVentureList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\MaterailSqlWeb.aspx.cs">
+      <DependentUpon>MaterailSqlWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\MaterailSqlWeb.aspx.designer.cs">
+      <DependentUpon>MaterailSqlWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\MaterialSqlDetailWeb.aspx.cs">
+      <DependentUpon>MaterialSqlDetailWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\MaterialSqlDetailWeb.aspx.designer.cs">
+      <DependentUpon>MaterialSqlDetailWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\MaterialStockMoveInfoSql.aspx.cs">
+      <DependentUpon>MaterialStockMoveInfoSql.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\MaterialStockMoveInfoSql.aspx.designer.cs">
+      <DependentUpon>MaterialStockMoveInfoSql.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\MaterialStockMoveSql.aspx.cs">
+      <DependentUpon>MaterialStockMoveSql.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\MaterialStockMoveSql.aspx.designer.cs">
+      <DependentUpon>MaterialStockMoveSql.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\materielList_sumbit.aspx.cs">
+      <DependentUpon>materielList_sumbit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\materielList_sumbit.aspx.designer.cs">
+      <DependentUpon>materielList_sumbit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\pickTabList_sumbit_BL.aspx.cs">
+      <DependentUpon>pickTabList_sumbit_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\pickTabList_sumbit_BL.aspx.designer.cs">
+      <DependentUpon>pickTabList_sumbit_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\pickTabList_sumbit20180619.aspx.cs">
+      <DependentUpon>pickTabList_sumbit20180619.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\pickTabList_sumbit20180619.aspx.designer.cs">
+      <DependentUpon>pickTabList_sumbit20180619.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\pickTabList_sumbit.aspx.cs">
+      <DependentUpon>pickTabList_sumbit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\pickTabList_sumbit.aspx.designer.cs">
+      <DependentUpon>pickTabList_sumbit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\Post_AllotSubmit_BL.aspx.cs">
+      <DependentUpon>Post_AllotSubmit_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\Post_AllotSubmit_BL.aspx.designer.cs">
+      <DependentUpon>Post_AllotSubmit_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\Post_AllotSubmit.aspx.cs">
+      <DependentUpon>Post_AllotSubmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\Post_AllotSubmit.aspx.designer.cs">
+      <DependentUpon>Post_AllotSubmit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\Post_CostCenterBatchSubmit_BL.aspx.cs">
+      <DependentUpon>Post_CostCenterBatchSubmit_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\Post_CostCenterBatchSubmit_BL.aspx.designer.cs">
+      <DependentUpon>Post_CostCenterBatchSubmit_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\Post_CostCenterBatchSubmit.aspx.cs">
+      <DependentUpon>Post_CostCenterBatchSubmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\Post_CostCenterBatchSubmit.aspx.designer.cs">
+      <DependentUpon>Post_CostCenterBatchSubmit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\Post_OutPlanBatchSubmit_BL.aspx.cs">
+      <DependentUpon>Post_OutPlanBatchSubmit_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\Post_OutPlanBatchSubmit_BL.aspx.designer.cs">
+      <DependentUpon>Post_OutPlanBatchSubmit_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\Post_OutPlanBatchSubmit.aspx.cs">
+      <DependentUpon>Post_OutPlanBatchSubmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\Post_OutPlanBatchSubmit.aspx.designer.cs">
+      <DependentUpon>Post_OutPlanBatchSubmit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\Post_ProjectPickSubmit_BL.aspx.cs">
+      <DependentUpon>Post_ProjectPickSubmit_BL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\Post_ProjectPickSubmit_BL.aspx.designer.cs">
+      <DependentUpon>Post_ProjectPickSubmit_BL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\Post_ProjectPickSubmit.aspx.cs">
+      <DependentUpon>Post_ProjectPickSubmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\Post_ProjectPickSubmit.aspx.designer.cs">
+      <DependentUpon>Post_ProjectPickSubmit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\sapList_sumbit.aspx.cs">
+      <DependentUpon>sapList_sumbit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\sapList_sumbit.aspx.designer.cs">
+      <DependentUpon>sapList_sumbit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\SapMatConfirm.aspx.cs">
+      <DependentUpon>SapMatConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\SapMatConfirm.aspx.designer.cs">
+      <DependentUpon>SapMatConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\stockList_sumbit.aspx.cs">
+      <DependentUpon>stockList_sumbit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\stockList_sumbit.aspx.designer.cs">
+      <DependentUpon>stockList_sumbit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KmrStorage\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KmrStorage\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\GetAuditTh.aspx.cs">
+      <DependentUpon>GetAuditTh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\GetAuditTh.aspx.designer.cs">
+      <DependentUpon>GetAuditTh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\GetAuditTwo.aspx.cs">
+      <DependentUpon>GetAuditTwo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\GetAuditTwo.aspx.designer.cs">
+      <DependentUpon>GetAuditTwo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\GetAuth.aspx.cs">
+      <DependentUpon>GetAuth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\GetAuth.aspx.designer.cs">
+      <DependentUpon>GetAuth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\GetAuthInfo.aspx.cs">
+      <DependentUpon>GetAuthInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\GetAuthInfo.aspx.designer.cs">
+      <DependentUpon>GetAuthInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\GetCompany.aspx.cs">
+      <DependentUpon>GetCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\GetCompany.aspx.designer.cs">
+      <DependentUpon>GetCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\GetDept.aspx.cs">
+      <DependentUpon>GetDept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\GetDept.aspx.designer.cs">
+      <DependentUpon>GetDept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\GetDetailAllStat.aspx.cs">
+      <DependentUpon>GetDetailAllStat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\GetDetailAllStat.aspx.designer.cs">
+      <DependentUpon>GetDetailAllStat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\GetDetailOneStat.aspx.cs">
+      <DependentUpon>GetDetailOneStat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\GetDetailOneStat.aspx.designer.cs">
+      <DependentUpon>GetDetailOneStat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\GetDetailThStat.aspx.cs">
+      <DependentUpon>GetDetailThStat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\GetDetailThStat.aspx.designer.cs">
+      <DependentUpon>GetDetailThStat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\GetDetailTwoStat.aspx.cs">
+      <DependentUpon>GetDetailTwoStat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\GetDetailTwoStat.aspx.designer.cs">
+      <DependentUpon>GetDetailTwoStat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\GetInfoList.aspx.cs">
+      <DependentUpon>GetInfoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\GetInfoList.aspx.designer.cs">
+      <DependentUpon>GetInfoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\GetPerson.aspx.cs">
+      <DependentUpon>GetPerson.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\GetPerson.aspx.designer.cs">
+      <DependentUpon>GetPerson.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\GetResCompany.aspx.cs">
+      <DependentUpon>GetResCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\GetResCompany.aspx.designer.cs">
+      <DependentUpon>GetResCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\GetResDept.aspx.cs">
+      <DependentUpon>GetResDept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\GetResDept.aspx.designer.cs">
+      <DependentUpon>GetResDept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\GetResPerson.aspx.cs">
+      <DependentUpon>GetResPerson.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\GetResPerson.aspx.designer.cs">
+      <DependentUpon>GetResPerson.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\GetTastList.aspx.cs">
+      <DependentUpon>GetTastList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\GetTastList.aspx.designer.cs">
+      <DependentUpon>GetTastList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\PostApplySubmit.aspx.cs">
+      <DependentUpon>PostApplySubmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\PostApplySubmit.aspx.designer.cs">
+      <DependentUpon>PostApplySubmit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\PostAuditOneSubmit.aspx.cs">
+      <DependentUpon>PostAuditOneSubmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\PostAuditOneSubmit.aspx.designer.cs">
+      <DependentUpon>PostAuditOneSubmit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\PostAuditThSubmit.aspx.cs">
+      <DependentUpon>PostAuditThSubmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\PostAuditThSubmit.aspx.designer.cs">
+      <DependentUpon>PostAuditThSubmit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\PostAuditTwoSubmit.aspx.cs">
+      <DependentUpon>PostAuditTwoSubmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\PostAuditTwoSubmit.aspx.designer.cs">
+      <DependentUpon>PostAuditTwoSubmit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelVI\PostAuthInfo.aspx.cs">
+      <DependentUpon>PostAuthInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelVI\PostAuthInfo.aspx.designer.cs">
+      <DependentUpon>PostAuthInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetAuditCompany.aspx.cs">
+      <DependentUpon>GetAuditCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetAuditCompany.aspx.designer.cs">
+      <DependentUpon>GetAuditCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetAuditDept.aspx.cs">
+      <DependentUpon>GetAuditDept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetAuditDept.aspx.designer.cs">
+      <DependentUpon>GetAuditDept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetAuditFlow.aspx.cs">
+      <DependentUpon>GetAuditFlow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetAuditFlow.aspx.designer.cs">
+      <DependentUpon>GetAuditFlow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetAuth.aspx.cs">
+      <DependentUpon>GetAuth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetAuth.aspx.designer.cs">
+      <DependentUpon>GetAuth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetCompany.aspx.cs">
+      <DependentUpon>GetCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetCompany.aspx.designer.cs">
+      <DependentUpon>GetCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetCompanyRole.aspx.cs">
+      <DependentUpon>GetCompanyRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetCompanyRole.aspx.designer.cs">
+      <DependentUpon>GetCompanyRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetDept.aspx.cs">
+      <DependentUpon>GetDept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetDept.aspx.designer.cs">
+      <DependentUpon>GetDept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetDeptSalaryInfo.aspx.cs">
+      <DependentUpon>GetDeptSalaryInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetDeptSalaryInfo.aspx.designer.cs">
+      <DependentUpon>GetDeptSalaryInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetDetailOneStat.aspx.cs">
+      <DependentUpon>GetDetailOneStat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetDetailOneStat.aspx.designer.cs">
+      <DependentUpon>GetDetailOneStat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetDetailTwoStat.aspx.cs">
+      <DependentUpon>GetDetailTwoStat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetDetailTwoStat.aspx.designer.cs">
+      <DependentUpon>GetDetailTwoStat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetFlowList.aspx.cs">
+      <DependentUpon>GetFlowList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetFlowList.aspx.designer.cs">
+      <DependentUpon>GetFlowList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetMonthSalaryInfo.aspx.cs">
+      <DependentUpon>GetMonthSalaryInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetMonthSalaryInfo.aspx.designer.cs">
+      <DependentUpon>GetMonthSalaryInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetPerson.aspx.cs">
+      <DependentUpon>GetPerson.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetPerson.aspx.designer.cs">
+      <DependentUpon>GetPerson.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetSalaryMonth.aspx.cs">
+      <DependentUpon>GetSalaryMonth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetSalaryMonth.aspx.designer.cs">
+      <DependentUpon>GetSalaryMonth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetTastList.aspx.cs">
+      <DependentUpon>GetTastList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetTastList.aspx.designer.cs">
+      <DependentUpon>GetTastList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetTastQueryList.aspx.cs">
+      <DependentUpon>GetTastQueryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\GetTastQueryList.aspx.designer.cs">
+      <DependentUpon>GetTastQueryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\KWA_ApplySubmit.aspx.cs">
+      <DependentUpon>KWA_ApplySubmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\KWA_ApplySubmit.aspx.designer.cs">
+      <DependentUpon>KWA_ApplySubmit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\KWA_AuditOneReject.aspx.cs">
+      <DependentUpon>KWA_AuditOneReject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\KWA_AuditOneReject.aspx.designer.cs">
+      <DependentUpon>KWA_AuditOneReject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\KWA_AuditOneSubmit.aspx.cs">
+      <DependentUpon>KWA_AuditOneSubmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\KWA_AuditOneSubmit.aspx.designer.cs">
+      <DependentUpon>KWA_AuditOneSubmit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\KWA_AuditTwoReject.aspx.cs">
+      <DependentUpon>KWA_AuditTwoReject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\KWA_AuditTwoReject.aspx.designer.cs">
+      <DependentUpon>KWA_AuditTwoReject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\KWA_AuditTwoSubmit.aspx.cs">
+      <DependentUpon>KWA_AuditTwoSubmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\KWA_AuditTwoSubmit.aspx.designer.cs">
+      <DependentUpon>KWA_AuditTwoSubmit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\KocelWageApp\KWA_AuthSetSubmit.aspx.cs">
+      <DependentUpon>KWA_AuthSetSubmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\KocelWageApp\KWA_AuthSetSubmit.aspx.designer.cs">
+      <DependentUpon>KWA_AuthSetSubmit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\public\jyt_user.cs" />
+    <Compile Include="api\public\user_info.aspx.cs">
+      <DependentUpon>user_info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\public\yan.cs" />
+    <Compile Include="api\strictM\GetLabdApplyList.aspx.cs">
+      <DependentUpon>GetLabdApplyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\strictM\GetLabdApplyList.aspx.designer.cs">
+      <DependentUpon>GetLabdApplyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\strictM\GetLabdCategory.aspx.cs">
+      <DependentUpon>GetLabdCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\strictM\GetLabdCategory.aspx.designer.cs">
+      <DependentUpon>GetLabdCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\strictM\GetLabdCom.aspx.cs">
+      <DependentUpon>GetLabdCom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\strictM\GetLabdCom.aspx.designer.cs">
+      <DependentUpon>GetLabdCom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\strictM\GetLabdDept.aspx.cs">
+      <DependentUpon>GetLabdDept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\strictM\GetLabdDept.aspx.designer.cs">
+      <DependentUpon>GetLabdDept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\strictM\GetLabdInfo.aspx.cs">
+      <DependentUpon>GetLabdInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\strictM\GetLabdInfo.aspx.designer.cs">
+      <DependentUpon>GetLabdInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\strictM\GetLabdInfoDetail.aspx.cs">
+      <DependentUpon>GetLabdInfoDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\strictM\GetLabdInfoDetail.aspx.designer.cs">
+      <DependentUpon>GetLabdInfoDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\strictM\GetLabdInfoIdDetail.aspx.cs">
+      <DependentUpon>GetLabdInfoIdDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\strictM\GetLabdInfoIdDetail.aspx.designer.cs">
+      <DependentUpon>GetLabdInfoIdDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\strictM\GetLabdItem.aspx.cs">
+      <DependentUpon>GetLabdItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\strictM\GetLabdItem.aspx.designer.cs">
+      <DependentUpon>GetLabdItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\strictM\GetLabdPerson.aspx.cs">
+      <DependentUpon>GetLabdPerson.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\strictM\GetLabdPerson.aspx.designer.cs">
+      <DependentUpon>GetLabdPerson.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\strictM\GetLabdVen.aspx.cs">
+      <DependentUpon>GetLabdVen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\strictM\GetLabdVen.aspx.designer.cs">
+      <DependentUpon>GetLabdVen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\strictM\PostApply.aspx.cs">
+      <DependentUpon>PostApply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\strictM\PostApply.aspx.designer.cs">
+      <DependentUpon>PostApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\strictM\PostEntry.aspx.cs">
+      <DependentUpon>PostEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\strictM\PostEntry.aspx.designer.cs">
+      <DependentUpon>PostEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DD_example\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DD_example\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\allot_stockList.aspx.cs">
+      <DependentUpon>allot_stockList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\allot_stockList.aspx.designer.cs">
+      <DependentUpon>allot_stockList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\checkIn_tablist.aspx.cs">
+      <DependentUpon>checkIn_tablist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\checkIn_tablist.aspx.designer.cs">
+      <DependentUpon>checkIn_tablist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\checkIn_tablist1900_submit.aspx.cs">
+      <DependentUpon>checkIn_tablist1900_submit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\checkIn_tablist1900_submit.aspx.designer.cs">
+      <DependentUpon>checkIn_tablist1900_submit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\checkIn_tablist1900.aspx.cs">
+      <DependentUpon>checkIn_tablist1900.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\checkIn_tablist1900.aspx.designer.cs">
+      <DependentUpon>checkIn_tablist1900.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\check_tablist.aspx.cs">
+      <DependentUpon>check_tablist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\check_tablist.aspx.designer.cs">
+      <DependentUpon>check_tablist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\confirm_tablist.aspx.cs">
+      <DependentUpon>confirm_tablist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\confirm_tablist.aspx.designer.cs">
+      <DependentUpon>confirm_tablist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\costCenter_batchPicklist.aspx.cs">
+      <DependentUpon>costCenter_batchPicklist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\costCenter_batchPicklist.aspx.designer.cs">
+      <DependentUpon>costCenter_batchPicklist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\ddInfo.aspx.cs">
+      <DependentUpon>ddInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\ddInfo.aspx.designer.cs">
+      <DependentUpon>ddInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\de_tablist.aspx.cs">
+      <DependentUpon>de_tablist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\de_tablist.aspx.designer.cs">
+      <DependentUpon>de_tablist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\index20181010.aspx.cs">
+      <DependentUpon>index20181010.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\index20181010.aspx.designer.cs">
+      <DependentUpon>index20181010.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\interfaceTest.aspx.cs">
+      <DependentUpon>interfaceTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\interfaceTest.aspx.designer.cs">
+      <DependentUpon>interfaceTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\MaterailStockList.aspx.cs">
+      <DependentUpon>MaterailStockList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\MaterailStockList.aspx.designer.cs">
+      <DependentUpon>MaterailStockList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\MaterialListSel.aspx.cs">
+      <DependentUpon>MaterialListSel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\MaterialListSel.aspx.designer.cs">
+      <DependentUpon>MaterialListSel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\MaterialStockInfo.aspx.cs">
+      <DependentUpon>MaterialStockInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\MaterialStockInfo.aspx.designer.cs">
+      <DependentUpon>MaterialStockInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\MaterialStockMoveList.aspx.cs">
+      <DependentUpon>MaterialStockMoveList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\MaterialStockMoveList.aspx.designer.cs">
+      <DependentUpon>MaterialStockMoveList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\MaterialStockMoveWeb.aspx.cs">
+      <DependentUpon>MaterialStockMoveWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\MaterialStockMoveWeb.aspx.designer.cs">
+      <DependentUpon>MaterialStockMoveWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\outPlan_batchPicklist.aspx.cs">
+      <DependentUpon>outPlan_batchPicklist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\outPlan_batchPicklist.aspx.designer.cs">
+      <DependentUpon>outPlan_batchPicklist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\pickInCom_CostCenterlist.aspx.cs">
+      <DependentUpon>pickInCom_CostCenterlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\pickInCom_CostCenterlist.aspx.designer.cs">
+      <DependentUpon>pickInCom_CostCenterlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\pickInCom_InPlanlist.aspx.cs">
+      <DependentUpon>pickInCom_InPlanlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\pickInCom_InPlanlist.aspx.designer.cs">
+      <DependentUpon>pickInCom_InPlanlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\pickInCom_OutPlanlist.aspx.cs">
+      <DependentUpon>pickInCom_OutPlanlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\pickInCom_OutPlanlist.aspx.designer.cs">
+      <DependentUpon>pickInCom_OutPlanlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\pickInCom_Researchlist.aspx.cs">
+      <DependentUpon>pickInCom_Researchlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\pickInCom_Researchlist.aspx.designer.cs">
+      <DependentUpon>pickInCom_Researchlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\pickOutCom_CostCenterlist.aspx.cs">
+      <DependentUpon>pickOutCom_CostCenterlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\pickOutCom_CostCenterlist.aspx.designer.cs">
+      <DependentUpon>pickOutCom_CostCenterlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\pickOutCom_InPlanlist.aspx.cs">
+      <DependentUpon>pickOutCom_InPlanlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\pickOutCom_InPlanlist.aspx.designer.cs">
+      <DependentUpon>pickOutCom_InPlanlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\pickOutCom_OutPlanlist.aspx.cs">
+      <DependentUpon>pickOutCom_OutPlanlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\pickOutCom_OutPlanlist.aspx.designer.cs">
+      <DependentUpon>pickOutCom_OutPlanlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\pick_saplist.aspx.cs">
+      <DependentUpon>pick_saplist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\pick_saplist.aspx.designer.cs">
+      <DependentUpon>pick_saplist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\pick_tablist.aspx.cs">
+      <DependentUpon>pick_tablist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\pick_tablist.aspx.designer.cs">
+      <DependentUpon>pick_tablist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\project_Picklist.aspx.cs">
+      <DependentUpon>project_Picklist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\project_Picklist.aspx.designer.cs">
+      <DependentUpon>project_Picklist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\query_declarePlanList.aspx.cs">
+      <DependentUpon>query_declarePlanList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\query_declarePlanList.aspx.designer.cs">
+      <DependentUpon>query_declarePlanList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\query_stockList.aspx.cs">
+      <DependentUpon>query_stockList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\query_stockList.aspx.designer.cs">
+      <DependentUpon>query_stockList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\stock_tablist.aspx.cs">
+      <DependentUpon>stock_tablist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\stock_tablist.aspx.designer.cs">
+      <DependentUpon>stock_tablist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KmrStorage\working.aspx.cs">
+      <DependentUpon>working.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KmrStorage\working.aspx.designer.cs">
+      <DependentUpon>working.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Old_App_Code\config\Config.cs" />
+    <Compile Include="Old_App_Code\EnterpriseBusiness\EnterpriseBusiness.cs" />
+    <Compile Include="Old_App_Code\Helper\Helper.cs" />
+    <Compile Include="Old_App_Code\Helper\HttpHelper.cs" />
+    <Compile Include="Old_App_Code\pcdata\pcdata.cs" />
+    <Compile Include="Old_App_Code\pcdata\userdata.cs" />
+    <Compile Include="DDpage\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DDpage\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\CoastCenter\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\GetSapProductOrder\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\Get_KmrApp_Inventory\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\Get_KmrApp_PurOrder\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\Get_KmrStorage_PlanList\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\InnerOrder\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\InTimeStock\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\KmrAppComPick\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\KmrAppMatChWebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\KmrAppMatCreateRsNo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\KmrAppMatPick\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\KmrAppMatSendToLineLib\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\PlanIn\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\PlanOut\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\PoRuku\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\Post_KmrApp_CheckIn\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\Post_KmrApp_ComResearchPick\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\Post_KmrApp_OutComCostPick\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\PO\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ProductOrderYuLiu\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\YiKu311\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\mobileSelect.less" />
+    <Content Include="css\font\iconfont.eot" />
+    <Content Include="css\font\iconfont.ttf" />
+    <Content Include="css\font\iconfont.woff" />
+    <Content Include="css\aui-iconfont.ttf" />
+    <Content Include="css\font_big\iconfont.eot" />
+    <Content Include="css\font_big\iconfont.ttf" />
+    <Content Include="css\font_big\iconfont.woff" />
+    <Content Include="fonts\mui-icons-extra.ttf" />
+    <Content Include="fonts\mui.ttf" />
+    <Content Include="fonts\iconfont.ttf" />
+    <Content Include="css\ITServer\iconfont.eot" />
+    <Content Include="css\ITServer\iconfont.ttf" />
+    <Content Include="css\ITServer\iconfont.woff" />
+    <Content Include="css\KocelWageApp\iconfont.eot" />
+    <Content Include="css\KocelWageApp\iconfont.ttf" />
+    <Content Include="css\KocelWageApp\iconfont.woff" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\DDpage.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Web References\KmrAppMatChWebReference\BAPIRET2.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\Get_KmrStorage_PlanList\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\Get_KmrStorage_PlanList\SI_ZPP_RESB_Sender.wsdl" />
+    <Content Include="Web References\Get_KmrStorage_PlanList\ZPP_RESBResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\KmrAppMatChWebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\KmrAppMatChWebReference\SI_ZPP_MATERIAL_REQ.wsdl" />
+    <Content Include="Web References\KmrAppMatChWebReference\ZSPP_MAREQ_ITEM.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\KmrAppMatChWebReference\ZSPP_MAREQ_MSG.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\KmrAppMatSendToLineLib\KmrSendMatService.wsdl" />
+    <None Include="Web References\KmrAppMatSendToLineLib\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\PlanIn\document.wsdl" />
+    <Content Include="Web References\PlanIn\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\PlanIn\ZPP_PLANResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\PlanOut\document.wsdl" />
+    <Content Include="Web References\PlanOut\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\PlanOut\ZPP_NO_PLANResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\PoRuku\document.wsdl" />
+    <Content Include="Web References\PoRuku\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\PoRuku\ZPP_PO_MOVEResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\Post_KmrApp_CheckIn\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\Post_KmrApp_CheckIn\SI_ZPP_GOODSINVOCHER.wsdl" />
+    <Content Include="Web References\Post_KmrApp_CheckIn\ZPP_GOODSINVOCHERResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\Post_KmrApp_ComResearchPick\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\Post_KmrApp_ComResearchPick\SI_ZPP_GOODSMVT_Z04.wsdl" />
+    <Content Include="Web References\Post_KmrApp_ComResearchPick\ZPP_GOODSMVT_Z04Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\Post_KmrApp_OutComCostPick\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\Post_KmrApp_OutComCostPick\SI_ZPP_GOODSMVT_201.wsdl" />
+    <Content Include="Web References\Post_KmrApp_OutComCostPick\ZPP_GOODSMVT_201Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\PO\document.wsdl" />
+    <Content Include="Web References\PO\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\PO\ZzxGetpoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\ProductOrderYuLiu\document.wsdl" />
+    <Content Include="Web References\ProductOrderYuLiu\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\ProductOrderYuLiu\ZPP_RESBResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\YiKu311\document.wsdl" />
+    <Content Include="Web References\YiKu311\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\YiKu311\ZMM_GOODSMOVE_311Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://192.168.0.192:50000/dir/wsdl%3fp=ic/15d9938f1fb6312f9123ca08aba75ed9">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Get_KmrStorage_PlanList\</RelPath>
+      <UpdateFromURL>http://192.168.0.192:50000/dir/wsdl%3fp=ic/15d9938f1fb6312f9123ca08aba75ed9</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_Get_KmrStorage_PlanList_SI_ZPP_RESB_SenderService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.0.192:50000/dir/wsdl%3fp=ic/838dbd01b2523542874fd7cac1e29d9f">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\KmrAppComPick\</RelPath>
+      <UpdateFromURL>http://192.168.0.192:50000/dir/wsdl%3fp=ic/838dbd01b2523542874fd7cac1e29d9f</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_KmrAppComPick_SI_ZPP_GOODSMVTService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.0.192:50000/dir/wsdl%3fp=ic/e95d579cb31134189669d985827c502b">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\KmrAppMatCreateRsNo\</RelPath>
+      <UpdateFromURL>http://192.168.0.192:50000/dir/wsdl%3fp=ic/e95d579cb31134189669d985827c502b</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_KmrAppMatCreateRsNo_SI_ZPP_RESERVATION_CREATE_SenderService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.0.194:50000/dir/wsdl%3fp=ic/a6202102ccc532ab881a4a4fcc08215a">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\KmrAppMatChWebReference\</RelPath>
+      <UpdateFromURL>http://192.168.0.194:50000/dir/wsdl%3fp=ic/a6202102ccc532ab881a4a4fcc08215a</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_KmrAppMatChWebReference_SI_ZPP_MATERIAL_REQService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.0.234:8090/Storage/KmrSendMatService.asmx%3fop=SendToLineLib">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\KmrAppMatSendToLineLib\</RelPath>
+      <UpdateFromURL>http://192.168.0.234:8090/Storage/KmrSendMatService.asmx%3fop=SendToLineLib</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_SendToLineLib_KmrSendMatService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.12.42:8001/sap/bc/srt/wsdl/srvc_6CAE8B779C8C1ED9A6DDFCF523101D86/wsdl11/allinone/ws_policy/document%3fsap-client=800">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\GetSapProductOrder\</RelPath>
+      <UpdateFromURL>http://192.168.12.42:8001/sap/bc/srt/wsdl/srvc_6CAE8B779C8C1ED9A6DDFCF523101D86/wsdl11/allinone/ws_policy/document%3fsap-client=800</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_GetSapProductOrder_ZZX_GETORDERCONFIRM</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.12.42:8001/sap/bc/srt/wsdl/srvc_6CAE8B779C8C1ED9A6DE145D801EDD86/wsdl11/allinone/ws_policy/document%3fsap-client=800">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PO\</RelPath>
+      <UpdateFromURL>http://192.168.12.42:8001/sap/bc/srt/wsdl/srvc_6CAE8B779C8C1ED9A6DE145D801EDD86/wsdl11/allinone/ws_policy/document%3fsap-client=800</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_PO_ZZX_GETPO</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.12.42:8001/sap/bc/srt/wsdl/srvc_6CAE8B779C8C1ED9A6DE22BCB56DDD86/wsdl11/allinone/ws_policy/document%3fsap-client=800">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\CoastCenter\</RelPath>
+      <UpdateFromURL>http://192.168.12.42:8001/sap/bc/srt/wsdl/srvc_6CAE8B779C8C1ED9A6DE22BCB56DDD86/wsdl11/allinone/ws_policy/document%3fsap-client=800</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_CoastCenter_ZZXKOSTL201</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.12.42:8001/sap/bc/srt/wsdl/srvc_6CAE8B779C8C1ED9A6DE2AAC61A8DD86/wsdl11/allinone/ws_policy/document%3fsap-client=800">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\InnerOrder\</RelPath>
+      <UpdateFromURL>http://192.168.12.42:8001/sap/bc/srt/wsdl/srvc_6CAE8B779C8C1ED9A6DE2AAC61A8DD86/wsdl11/allinone/ws_policy/document%3fsap-client=800</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_InnerOrder_ZZXMOVEORDER</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.12.42:8001/sap/bc/srt/wsdl/srvc_6CAE8B779C8C1ED9A6DE415995FEDD86/wsdl11/allinone/ws_policy/document%3fsap-client=800">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\YiKu311\</RelPath>
+      <UpdateFromURL>http://192.168.12.42:8001/sap/bc/srt/wsdl/srvc_6CAE8B779C8C1ED9A6DE415995FEDD86/wsdl11/allinone/ws_policy/document%3fsap-client=800</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_YiKu311_ZMOVE311</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.12.42:8001/sap/bc/srt/wsdl/srvc_6CAE8B779C8C1ED9A6DE496D43239D86/wsdl11/allinone/ws_policy/document%3fsap-client=800">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PoRuku\</RelPath>
+      <UpdateFromURL>http://192.168.12.42:8001/sap/bc/srt/wsdl/srvc_6CAE8B779C8C1ED9A6DE496D43239D86/wsdl11/allinone/ws_policy/document%3fsap-client=800</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_PoRuku_ZPOMIGO</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.12.42:8001/sap/bc/srt/wsdl/srvc_6CAE8B779C8C1ED9A6DE57CF722DDD86/wsdl11/allinone/ws_policy/document%3fsap-client=800">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PlanIn\</RelPath>
+      <UpdateFromURL>http://192.168.12.42:8001/sap/bc/srt/wsdl/srvc_6CAE8B779C8C1ED9A6DE57CF722DDD86/wsdl11/allinone/ws_policy/document%3fsap-client=800</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_PlanIn_ZZXPLAN</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.12.42:8001/sap/bc/srt/wsdl/srvc_6CAE8B779C8C1ED9A6DE61C5BFB05D86/wsdl11/allinone/ws_policy/document%3fsap-client=800">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PlanOut\</RelPath>
+      <UpdateFromURL>http://192.168.12.42:8001/sap/bc/srt/wsdl/srvc_6CAE8B779C8C1ED9A6DE61C5BFB05D86/wsdl11/allinone/ws_policy/document%3fsap-client=800</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_PlanOut_ZZXNOPLAN</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.12.42:8001/sap/bc/srt/wsdl/srvc_6CAE8B779C8C1ED9A6DE69B1928E5D86/wsdl11/allinone/ws_policy/document%3fsap-client=800">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\InTimeStock\</RelPath>
+      <UpdateFromURL>http://192.168.12.42:8001/sap/bc/srt/wsdl/srvc_6CAE8B779C8C1ED9A6DE69B1928E5D86/wsdl11/allinone/ws_policy/document%3fsap-client=800</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_InTimeStock_ZXREALTIMESTORE</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.12.42:8001/sap/bc/srt/wsdl/srvc_6CAE8B779C8C1ED9A6DE93996DA95D86/wsdl11/allinone/ws_policy/document%3fsap-client=800">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ProductOrderYuLiu\</RelPath>
+      <UpdateFromURL>http://192.168.12.42:8001/sap/bc/srt/wsdl/srvc_6CAE8B779C8C1ED9A6DE93996DA95D86/wsdl11/allinone/ws_policy/document%3fsap-client=800</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_ProductOrderYuLiu_ZZXPRODUCTRESB</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://poprd1:50000/dir/wsdl%3fp=ic/2cf4c4f761df37159e0850977d5d790f">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Get_KmrApp_Inventory\</RelPath>
+      <UpdateFromURL>http://poprd1:50000/dir/wsdl%3fp=ic/2cf4c4f761df37159e0850977d5d790f</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_Get_KmrApp_Inventory_SI_ZDM_INVENTORY_SenderService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://poprd1:50000/dir/wsdl%3fp=ic/71ec328b39eb337aa372e41678a02f40">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Post_KmrApp_OutComCostPick\</RelPath>
+      <UpdateFromURL>http://poprd1:50000/dir/wsdl%3fp=ic/71ec328b39eb337aa372e41678a02f40</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_Post_KmrApp_OutComCostPick_SI_ZPP_GOODSMVT_201Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://poprd1:50000/dir/wsdl%3fp=ic/86d22be93e89388aa93d99f9e3b87d2a">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Post_KmrApp_CheckIn\</RelPath>
+      <UpdateFromURL>http://poprd1:50000/dir/wsdl%3fp=ic/86d22be93e89388aa93d99f9e3b87d2a</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_Post_KmrApp_CheckIn_SI_ZPP_GOODSINVOCHERService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://poprd1:50000/dir/wsdl%3fp=ic/a315075427273e19a2f19287030bdd71">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Post_KmrApp_ComResearchPick\</RelPath>
+      <UpdateFromURL>http://poprd1:50000/dir/wsdl%3fp=ic/a315075427273e19a2f19287030bdd71</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_Post_KmrApp_ComResearchPick_SI_ZPP_GOODSMVT_Z04Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://poprd1:50000/dir/wsdl%3fp=ic/a80e047eaa2d37b4beafceaa340cca5e">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Get_KmrApp_PurOrder\</RelPath>
+      <UpdateFromURL>http://poprd1:50000/dir/wsdl%3fp=ic/a80e047eaa2d37b4beafceaa340cca5e</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_Get_KmrApp_PurOrder_SI_ZDM_EKESService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://poprd1:50000/dir/wsdl%3fp=ic/bdcf24ddc9333b6bbc3ffd9441184da8">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\KmrAppMatPick\</RelPath>
+      <UpdateFromURL>http://poprd1:50000/dir/wsdl%3fp=ic/bdcf24ddc9333b6bbc3ffd9441184da8</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DDpage_KmrAppMatPick_SI_ZPP_MATERIAL_REQService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="jmail">
+      <Guid>{AED3A6B0-2171-11D2-B77C-0008C73ACA8F}</Guid>
+      <VersionMajor>4</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7647</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7647/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

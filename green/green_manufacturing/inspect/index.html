@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <title></title>
+    <link href="../css/Style.css" rel="stylesheet" />
+    <link href="../css/aui.css" rel="stylesheet" />
+    <link href="../css/font/iconfont.css" rel="stylesheet" />
+    <style type="text/css">
+        .iconfont {
+            font-size:1.5em;
+        }
+        .aui-bar-tab-label {
+            margin-bottom:0.5em;
+        }
+        
+    </style>
+</head>
+<body>
+   <iframe class="head" src="../page_public/head.html"></iframe>
+    <footer class="aui-bar aui-bar-tab" id="footer">
+        <div class="aui-bar-tab-item aui-active" tapmode>
+            <i class="icon iconfont icon-createtask_fill"></i>
+            <div class="aui-bar-tab-label">今日事项</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <i class="icon iconfont icon-smallscreen"></i>
+            <div class="aui-bar-tab-label">整改反馈</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <i class="icon iconfont icon-dynamic"></i>
+            <div class="aui-bar-tab-label">历史查询</div>
+        </div>
+    </footer>
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/status_menu.js"></script>
+    <script type="text/javascript">
+       alert("123")
+        function menus() {
+            var data = [{ icon: "icon-people_fill", text: "检查人" }, { icon: "icon-people_fill", text: "审核人" }, { icon: "icon-people_fill", text: "责任人" }, { icon: "icon-people_fill", text: "管理员" }];
+            if ($('.menu_box').length > 0)
+                close_menu();
+            else
+                menu(data);
+        }
+        function menu_click(obj) {
+           console.log($(obj).attr("num"))
+        }
+        function request_jump(url) {
+            location.href = url;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1500429170399'); /* IE9*/
+  src: url('iconfont.eot?t=1500429170399#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1500429170399') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1500429170399') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1500429170399#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-activity:before { content: "\e6de"; }
+
+.icon-activity_fill:before { content: "\e6df"; }
+
+.icon-addition_fill:before { content: "\e6e0"; }
+
+.icon-addressbook_fill:before { content: "\e6e2"; }
+
+.icon-barrage_fill:before { content: "\e6e3"; }
+
+.icon-barrage:before { content: "\e6e4"; }
+
+.icon-businesscard_fill:before { content: "\e6e6"; }
+
+.icon-businesscard:before { content: "\e6e7"; }
+
+.icon-collection_fill:before { content: "\e6ea"; }
+
+.icon-collection:before { content: "\e6eb"; }
+
+.icon-computer_fill:before { content: "\e6ec"; }
+
+.icon-computer:before { content: "\e6ed"; }
+
+.icon-createtask_fill:before { content: "\e6ee"; }
+
+.icon-createtask:before { content: "\e6ef"; }
+
+.icon-customerservice_fill:before { content: "\e6f0"; }
+
+.icon-customerservice:before { content: "\e6f1"; }
+
+.icon-document:before { content: "\e6f3"; }
+
+.icon-document_fill:before { content: "\e6f4"; }
+
+.icon-empty:before { content: "\e6f7"; }
+
+.icon-empty_fill:before { content: "\e6f8"; }
+
+.icon-group:before { content: "\e6ff"; }
+
+.icon-group_fill:before { content: "\e700"; }
+
+.icon-headlines_fill:before { content: "\e701"; }
+
+.icon-headlines:before { content: "\e702"; }
+
+.icon-label:before { content: "\e706"; }
+
+.icon-label_fill:before { content: "\e707"; }
+
+.icon-message:before { content: "\e70c"; }
+
+.icon-message_fill:before { content: "\e70d"; }
+
+.icon-mine:before { content: "\e70e"; }
+
+.icon-mine_fill:before { content: "\e70f"; }
+
+.icon-return:before { content: "\e720"; }
+
+.icon-setup_fill:before { content: "\e728"; }
+
+.icon-setup:before { content: "\e729"; }
+
+.icon-task:before { content: "\e732"; }
+
+.icon-task_fill:before { content: "\e733"; }
+
+.icon-workbench_fill:before { content: "\e73e"; }
+
+.icon-workbench:before { content: "\e73f"; }
+

@@ -1,0 +1,75 @@
+﻿body {
+    font-size:0.9em;
+    font-family:微软雅黑;
+    line-height:1.1;
+    height:100vh;
+    background:#f9f9f9;
+}
+
+.aui-bar-nav {
+    height:8vh;
+}
+#footer {
+    font-weight:500;
+    padding-bottom:0.3em;
+    height:8vh;
+}
+
+.iconfont {
+    font-size:1.8em !important;
+}
+
+.aui-bar-tab .aui-bar-tab-label {
+        font-size:0.6em;
+    }
+
+.aui-popup-top, .aui-popup-top-left, .aui-popup-top-right {
+    top:3.2em;
+}
+ .aui-bar-nav .aui-btn.aui-btn-outlined {
+            margin-top: 1em;
+        }
+
+.aui-list-item-label-icon i{
+    color:#848283;
+    font-size:1.5em !important;
+}
+
+.aui-list-item-inner {
+    color:#505050;
+    font-family:微软雅黑;
+    font-size:0.8em;
+    font-weight:600;
+}
+
+.aui-bar-nav .aui-btn .aui-iconfont {
+    font-size:0.8em;
+}
+
+.page_body{ 
+    width:100%;
+    height:84vh;
+    
+}
+
+.scroll {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+}
+
+iframe {
+    border:0;
+    width:100%;
+    height:100%;
+}
+
+.aui-bar-tab {
+    color:#AFAFAF;
+}
+
+.aui-bar-nav .aui-btn.aui-btn-outlined {
+    color:#DA251C !important;
+    padding:0.5em; 
+    border-radius:4px;
+    font-weight:700; 
+}

@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="../css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <script src="../js/jquery-1.11.0.min.js"></script>
+
+    <style>
+        body {
+            background: #ffffff;
+        }
+
+
+        .logo {
+            padding: 5px 0 5px 10px;
+            height: 30px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+            .logo img {
+                height: 100%;
+            }
+
+        .banner img {
+            width: 100%;
+        }
+
+        .bottom_box img {
+            width: 100%;
+        }
+
+        .access_device ul {
+            padding: 15px 0;
+            text-align: center;
+            font-size: 0px;
+        }
+
+        .access_device li {
+            display: inline-block;
+            padding: 4px 0;
+            vertical-align: middle;
+            font-size: 12px;
+            width: 25%;
+            margin: 0 3%;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .access_device .title {
+            line-height: 24px;
+        }
+
+            .access_device .title img {
+                position: relative;
+                top: 3px;
+                margin: 0px 4px 0 0;
+            }
+
+        .access_device li:first-child .title img {
+            top: 1px;
+        }
+
+        .access_device .num {
+            line-height: 20px;
+        }
+
+        .related_app {
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+            .related_app h2 {
+                font-size: 18px;
+                padding: 10px 0 20px 10px;
+            }
+
+            .related_app .more {
+                position: absolute;
+                top: 18px;
+                right: 10px;
+                font-size: 12px;
+            }
+
+            .related_app ul {
+                font-size: 0px;
+                text-align: center;
+            }
+
+            .related_app li {
+                display: inline-block;
+                vertical-align: top;
+                width: 25%;
+                box-sizing: border-box;
+                padding: 0 2%;
+            }
+
+            .related_app .icon img {
+                width: 76%;
+            }
+
+            .related_app .name {
+                font-size: 12px;
+                line-height: 28px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .related_app .money {
+                font-size: 12px;
+                color: #c00;
+                line-height: 24px;
+            }
+
+        .new_text {
+            text-indent: 2em;
+            font-size: 12px;
+            line-height: 18px;
+            padding: 10px 10px 20px;
+        }
+
+        .bottom_box {
+            padding-bottom: 20px;
+            background: rgb(235,235,235);
+        }
+
+            .bottom_box img {
+                display: inline-block;
+                vertical-align: top;
+            }
+		
+
+    </style>
+
+</head>
+
+<body>
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">供应链管理</h1>
+    </header>
+    <!--<div class="logo">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    供应链管理
+    </div>-->
+    <div class="mui-content">
+        <div class="banner">
+            <div id="slider" class="mui-slider fix_slider">
+                <div class="mui-slider-group mui-slider-loop">
+                    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+                    <div class="mui-slider-item mui-slider-item-duplicate">
+                        <a href="#">
+                            <img src="img/loop02.jpg">
+                        </a>
+                    </div>
+                    <!-- 第一张 -->
+                    <div class="mui-slider-item">
+                        <a href="#">
+                            <img src="img/loop01.jpg">
+                        </a>
+                    </div>
+                    <!-- 第二张 -->
+                    <div class="mui-slider-item">
+                        <a href="#">
+                            <img src="img/loop02.jpg">
+                        </a>
+                    </div>
+                    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+                    <div class="mui-slider-item mui-slider-item-duplicate">
+                        <a href="#">
+                            <img src="img/loop01.jpg">
+                        </a>
+                    </div>
+                </div>
+                <div class="mui-slider-indicator">
+                    <div class="mui-indicator mui-active"></div>
+                    <div class="mui-indicator"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="access_device">
+            <ul>
+                <li>
+                    <div class="title"><img src="img/icon_u18.png">交易额</div>
+                    <div class="num" id="amount"></div>
+                </li>
+                <li>
+                    <div class="title"><img src="img/icon_u15.png">订单数</div>
+                    <div class="num" id="processNum"></div>
+                </li>
+                <li>
+                    <div class="title"><img src="img/icon_u25.png">入驻企业</div>
+                    <div class="num" id="companyNum"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="bottom_box">
+            <img src="img/content01.jpg">
+            <!--<img src="img/img2.jpg">
+            <img src="img/img3.jpg">
+            <img src="img/img4.jpg">
+            <img src="img/img5.jpg">-->
+        </div>
+        </div>
+        <script src="../js/mui.min.js"></script>
+        <script type="text/javascript" charset="utf-8">
+
+            mui.init({
+                swipeBack: true //启用右滑关闭功能
+            });
+
+            var slider = mui("#slider");
+            slider.slider({
+                interval: 5000
+            });
+
+
+            function processSRMData(data) {
+
+                var strAmount = data[0].processvolumesumallData[0].amount;
+                var strCompany = data[0].processcompanysumallData[0].amount;
+                var strOrder = data[0].processorderssumallData[0].amount;
+
+                $("#processNum").html(strOrder);
+                $("#amount").html(strAmount.toFixed(0));
+                $("#companyNum").html(strCompany);
+
+            }
+
+
+            $(function () {
+                $.ajax({
+                    url: "http://122.112.213.22/dh/api/company.aspx",
+                    type: "post",
+                    dataType: 'JSONP',
+                    jsonp: 'processData',
+                    jsonpCallback: "processSRMData",
+                    success: function (data) {
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        //On error do this
+                        console.info("error.");
+                    }
+                });
+            });
+
+
+        </script>
+</body>
+
+</html>

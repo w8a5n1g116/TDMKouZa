@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://192.168.0.192:50000/dir/wsdl?p=ic/15d9938f1fb6312f9123ca08aba75ed9" filename="SI_ZPP_RESB_Sender.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

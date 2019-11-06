@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://poprd1:50000/dir/wsdl?p=ic/bdcf24ddc9333b6bbc3ffd9441184da8" filename="SI_ZPP_MATERIAL_REQ.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

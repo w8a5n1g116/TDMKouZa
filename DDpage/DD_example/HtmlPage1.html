@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var js = { tt: "123", aa: "321312" };
+            $.post("../api/test/test.aspx",js , function (fd) {
+                $("div").html(fd)
+            })
+           
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

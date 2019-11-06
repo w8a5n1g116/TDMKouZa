@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MaterialStockMoveInfoSql.aspx.cs" Inherits="DDpage.api.KmrStorage.MaterialStockMoveInfoSql" %>

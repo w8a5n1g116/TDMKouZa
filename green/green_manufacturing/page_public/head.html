@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="http://localhost:4733/js/jquery-1.11.0.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <title></title>
+    <link href="../css/Style.css" rel="stylesheet" />
+    <link href="../css/aui.css" rel="stylesheet" />
+    <link href="../css/font/iconfont.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="head_box">
+        <div class="head_btn">
+            <div><i class="icon iconfont icon-people_fill"></i></div>
+            <div id="status">管理员</div>
+        </div>
+    </div>
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".head_btn").click(function () {
+                parent.menus();
+            });
+        })
+        function status(e) {
+            $("#status").html(e);
+        }
+    </script>
+</body>
+</html>

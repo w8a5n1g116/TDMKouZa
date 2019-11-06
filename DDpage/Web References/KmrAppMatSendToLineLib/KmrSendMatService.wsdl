@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SendToLineLib">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strJson" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendToLineLibResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendToLineLibResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="creratePickMatPlan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="facCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="perNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="matCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="matNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="creratePickMatPlanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="creratePickMatPlanResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendToLineLibSoapIn">
+    <wsdl:part name="parameters" element="tns:SendToLineLib" />
+  </wsdl:message>
+  <wsdl:message name="SendToLineLibSoapOut">
+    <wsdl:part name="parameters" element="tns:SendToLineLibResponse" />
+  </wsdl:message>
+  <wsdl:message name="creratePickMatPlanSoapIn">
+    <wsdl:part name="parameters" element="tns:creratePickMatPlan" />
+  </wsdl:message>
+  <wsdl:message name="creratePickMatPlanSoapOut">
+    <wsdl:part name="parameters" element="tns:creratePickMatPlanResponse" />
+  </wsdl:message>
+  <wsdl:portType name="KmrSendMatServiceSoap">
+    <wsdl:operation name="SendToLineLib">
+      <wsdl:input message="tns:SendToLineLibSoapIn" />
+      <wsdl:output message="tns:SendToLineLibSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="creratePickMatPlan">
+      <wsdl:input message="tns:creratePickMatPlanSoapIn" />
+      <wsdl:output message="tns:creratePickMatPlanSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="KmrSendMatServiceSoap" type="tns:KmrSendMatServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendToLineLib">
+      <soap:operation soapAction="http://tempuri.org/SendToLineLib" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="creratePickMatPlan">
+      <soap:operation soapAction="http://tempuri.org/creratePickMatPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="KmrSendMatServiceSoap12" type="tns:KmrSendMatServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendToLineLib">
+      <soap12:operation soapAction="http://tempuri.org/SendToLineLib" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="creratePickMatPlan">
+      <soap12:operation soapAction="http://tempuri.org/creratePickMatPlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="KmrSendMatService">
+    <wsdl:port name="KmrSendMatServiceSoap" binding="tns:KmrSendMatServiceSoap">
+      <soap:address location="http://192.168.0.234:8090/Storage/KmrSendMatService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="KmrSendMatServiceSoap12" binding="tns:KmrSendMatServiceSoap12">
+      <soap12:address location="http://192.168.0.234:8090/Storage/KmrSendMatService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

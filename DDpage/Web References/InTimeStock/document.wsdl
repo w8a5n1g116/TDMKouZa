@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:sap-com:document:sap:rfc:functions" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl" />
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="BN_BN_ZXREALTIMESTORE">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+    <saptrnbnd:OptimizedMimeSerialization xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true" />
+    <wsp:ExactlyOne xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" />
+    <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BN_BN_ZXREALTIMESTORE_SOAP12">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+    <saptrnbnd:OptimizedMimeSerialization xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true" />
+    <wsp:ExactlyOne xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" />
+    <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_IF_ZXREALTIMESTORE">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/" wsp:Optional="true">
+      <sapcentraladmin:BusinessApplicationID>6CAE8B779C8C1ED993EEE83B53C83D86</sapcentraladmin:BusinessApplicationID>
+    </sapcentraladmin:CentralAdministration>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_ZDM_REALTIMESTORE">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char40">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="40" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="quantum13.3">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="13" />
+          <xsd:fractionDigits value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="string">
+        <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+      <xsd:complexType name="ZDM_MARD">
+        <xsd:sequence>
+          <xsd:element name="MATNR" type="tns:char18" />
+          <xsd:element name="MAKTX" type="tns:char40" />
+          <xsd:element name="WERKS" type="tns:char4" />
+          <xsd:element name="LGORT" type="tns:char4" />
+          <xsd:element name="LABST" type="tns:quantum13.3" />
+          <xsd:element name="KALAB" type="tns:quantum13.3" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZZX_SERNR">
+        <xsd:sequence>
+          <xsd:element name="MATNR" type="tns:char18" />
+          <xsd:element name="WERKS" type="tns:char4" />
+          <xsd:element name="LGORT" type="tns:char4" />
+          <xsd:element name="SERNR" type="tns:char18" />
+          <xsd:element name="KDAUF" type="tns:char10" />
+          <xsd:element name="KDPOS" type="tns:numeric6" />
+          <xsd:element name="AUFNR" type="tns:char12" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TABLE_OF_ZDM_MARD">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZDM_MARD" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TABLE_OF_ZZX_SERNR">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZZX_SERNR" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZDM_REALTIMESTORE">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ZLGORT" type="tns:char4" />
+            <xsd:element minOccurs="0" name="ZMATNR" type="tns:string" />
+            <xsd:element name="Z_MARD" type="tns:TABLE_OF_ZDM_MARD" />
+            <xsd:element name="Z_SER" type="tns:TABLE_OF_ZZX_SERNR" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZDM_REALTIMESTOREResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Z_MARD" type="tns:TABLE_OF_ZDM_MARD" />
+            <xsd:element name="Z_SER" type="tns:TABLE_OF_ZZX_SERNR" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZDM_REALTIMESTORE">
+    <wsdl:part name="parameters" element="tns:ZDM_REALTIMESTORE" />
+  </wsdl:message>
+  <wsdl:message name="ZDM_REALTIMESTOREResponse">
+    <wsdl:part name="parameter" element="tns:ZDM_REALTIMESTOREResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ZXREALTIMESTORE">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_IF_ZXREALTIMESTORE" />
+    </wsp:Policy>
+    <wsdl:operation name="ZDM_REALTIMESTORE">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_ZDM_REALTIMESTORE" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZDM_REALTIMESTORE" />
+      <wsdl:output message="tns:ZDM_REALTIMESTOREResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZXREALTIMESTORE" type="tns:ZXREALTIMESTORE">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_BN_ZXREALTIMESTORE" />
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZDM_REALTIMESTORE">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZXREALTIMESTORE:ZDM_REALTIMESTORERequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ZXREALTIMESTORE_SOAP12" type="tns:ZXREALTIMESTORE">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_BN_ZXREALTIMESTORE_SOAP12" />
+    </wsp:Policy>
+    <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZDM_REALTIMESTORE">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZXREALTIMESTORE:ZDM_REALTIMESTORERequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZXREALTIMESTORE">
+    <wsdl:port name="ZXREALTIMESTORE" binding="tns:ZXREALTIMESTORE">
+      <soap:address location="http://ERPPRD.YANTAIMOON.COM:8001/sap/bc/srt/rfc/sap/zxrealtimestore/800/zxrealtimestore/zxrealtimestore" />
+    </wsdl:port>
+    <wsdl:port name="ZXREALTIMESTORE_SOAP12" binding="tns:ZXREALTIMESTORE_SOAP12">
+      <wsoap12:address location="http://ERPPRD.YANTAIMOON.COM:8001/sap/bc/srt/rfc/sap/zxrealtimestore/800/zxrealtimestore/zxrealtimestore" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

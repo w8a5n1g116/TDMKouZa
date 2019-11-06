@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:p1="http://www.kocel.com/lims/zpp_reservation_create" xmlns:rfc="urn:sap-com:document:sap:rfc:functions" name="SI_ZPP_RESERVATION_CREATE_Sender" targetNamespace="http://www.kocel.com/lims/zpp_reservation_create" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation />
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="OP_SI_ZPP_RESERVATION_CREATE_Sender" />
+  <wsdl:types>
+    <xsd:schema xmlns="urn:sap-com:document:sap:rfc:functions" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="ZPP_RESERVATION_CREATE">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="RETURN" type="rfc:TABLE_OF_BAPIRET2" />
+            <xsd:element minOccurs="0" name="ZSD_RESERVATION_HEADER" type="rfc:ZTD_RESERVATION_HEADER" />
+            <xsd:element minOccurs="0" name="ZSD_RESERVATION_LINE" type="rfc:ZTD_RESERVATION_LINE" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZPP_RESERVATION_CREATEResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="MESSAGE" type="rfc:string" />
+            <xsd:element minOccurs="0" name="RETURN" type="rfc:TABLE_OF_BAPIRET2" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char30">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="30" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char50">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="50" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char32">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="32" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="string">
+        <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char220">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="220" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="unit3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="quantum13.3">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="13" />
+          <xsd:fractionDigits value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="TABLE_OF_BAPIRET2">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="rfc:BAPIRET2" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTD_RESERVATION_HEADER">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="rfc:ZSD_RESERVATION_HEADER" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BAPIRET2">
+        <xsd:sequence>
+          <xsd:element name="TYPE" type="rfc:char1" />
+          <xsd:element name="ID" type="rfc:char20" />
+          <xsd:element name="NUMBER" type="rfc:numeric3" />
+          <xsd:element name="MESSAGE" type="rfc:char220" />
+          <xsd:element name="LOG_NO" type="rfc:char20" />
+          <xsd:element name="LOG_MSG_NO" type="rfc:numeric6" />
+          <xsd:element name="MESSAGE_V1" type="rfc:char50" />
+          <xsd:element name="MESSAGE_V2" type="rfc:char50" />
+          <xsd:element name="MESSAGE_V3" type="rfc:char50" />
+          <xsd:element name="MESSAGE_V4" type="rfc:char50" />
+          <xsd:element name="PARAMETER" type="rfc:char32" />
+          <xsd:element name="ROW" type="xsd:int" />
+          <xsd:element name="FIELD" type="rfc:char30" />
+          <xsd:element name="SYSTEM" type="rfc:char10" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZSD_RESERVATION_LINE">
+        <xsd:sequence>
+          <xsd:element name="MATNR" type="rfc:char18" />
+          <xsd:element name="ERFMG" type="rfc:quantum13.3" />
+          <xsd:element name="ERFME" type="rfc:unit3" />
+          <xsd:element name="LGORT" type="rfc:char4" />
+          <xsd:element name="CHARG" type="rfc:char10" />
+          <xsd:element name="WERKS" type="rfc:char4" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTD_RESERVATION_LINE">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="rfc:ZSD_RESERVATION_LINE" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZSD_RESERVATION_HEADER">
+        <xsd:sequence>
+          <xsd:element name="RSDAT" type="rfc:date10" />
+          <xsd:element name="BWART" type="rfc:char3" />
+          <xsd:element name="KOSTL" type="rfc:char10" />
+          <xsd:element name="GSBER" type="rfc:char4" />
+          <xsd:element name="AUFNR" type="rfc:char12" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="rfc.ZPP_RESERVATION_CREATE">
+    <wsdl:documentation />
+    <wsdl:part name="parameters" element="rfc:ZPP_RESERVATION_CREATE" />
+  </wsdl:message>
+  <wsdl:message name="rfc.ZPP_RESERVATION_CREATEResponse">
+    <wsdl:documentation />
+    <wsdl:part name="parameter" element="rfc:ZPP_RESERVATION_CREATEResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SI_ZPP_RESERVATION_CREATE_Sender">
+    <wsdl:documentation />
+    <wsdl:operation name="SI_ZPP_RESERVATION_CREATE_Sender">
+      <wsdl:documentation />
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_SI_ZPP_RESERVATION_CREATE_Sender" />
+      </wsp:Policy>
+      <wsdl:input message="p1:rfc.ZPP_RESERVATION_CREATE" />
+      <wsdl:output message="p1:rfc.ZPP_RESERVATION_CREATEResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SI_ZPP_RESERVATION_CREATE_SenderBinding" type="p1:SI_ZPP_RESERVATION_CREATE_Sender">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <wsdl:operation name="SI_ZPP_RESERVATION_CREATE_Sender">
+      <operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <wsdl:input>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </wsdl:input>
+      <wsdl:output>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SI_ZPP_RESERVATION_CREATE_SenderService">
+    <wsdl:port name="HTTP_Port" binding="p1:SI_ZPP_RESERVATION_CREATE_SenderBinding">
+      <address location="http://poprd1:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BS_LIMS_PRD&amp;receiverParty=&amp;receiverService=&amp;interface=SI_ZPP_RESERVATION_CREATE_Sender&amp;interfaceNamespace=http%3A%2F%2Fwww.kocel.com%2Flims%2Fzpp_reservation_create" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </wsdl:port>
+    <wsdl:port name="HTTPS_Port" binding="p1:SI_ZPP_RESERVATION_CREATE_SenderBinding">
+      <address location="https://poprd1:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BS_LIMS_PRD&amp;receiverParty=&amp;receiverService=&amp;interface=SI_ZPP_RESERVATION_CREATE_Sender&amp;interfaceNamespace=http%3A%2F%2Fwww.kocel.com%2Flims%2Fzpp_reservation_create" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

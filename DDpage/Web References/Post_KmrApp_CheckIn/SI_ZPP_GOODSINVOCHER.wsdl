@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:p1="http://www.kocel.com/lims/zpp_goodsinvocher" xmlns:rfc="urn:sap-com:document:sap:rfc:functions" name="SI_ZPP_GOODSINVOCHER" targetNamespace="http://www.kocel.com/lims/zpp_goodsinvocher" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation />
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="OP_SI_ZPP_GOODSINVOCHER" />
+  <wsdl:types>
+    <xsd:schema xmlns="urn:sap-com:document:sap:rfc:functions" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="ZPP_GOODSINVOCHERResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="INFO" type="rfc:string" />
+            <xsd:element name="MBLNR" type="rfc:char10" />
+            <xsd:element name="MESSG" type="rfc:string" />
+            <xsd:element name="MJAHR" type="rfc:numeric4" />
+            <xsd:element minOccurs="0" name="ZT_GOODSINVOCHERITEM" type="rfc:TABLE_OF_ZSD_GOODSINVOCHERITEM" />
+            <xsd:element minOccurs="0" name="ZT_GOODSMVTHEADER" type="rfc:TABLE_OF_ZSD_GOODSMVTHEADER" />
+            <xsd:element minOccurs="0" name="ZT_GOODSMVTRETURN" type="rfc:TABLE_OF_ZSD_GOODSMVTRETURN" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZPP_GOODSINVOCHER">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="ZT_GOODSINVOCHERITEM" type="rfc:TABLE_OF_ZSD_GOODSINVOCHERITEM" />
+            <xsd:element minOccurs="0" name="ZT_GOODSMVTHEADER" type="rfc:TABLE_OF_ZSD_GOODSMVTHEADER" />
+            <xsd:element minOccurs="0" name="ZT_GOODSMVTRETURN" type="rfc:TABLE_OF_ZSD_GOODSMVTRETURN" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:simpleType name="date10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="unit3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric5">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="5" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="quantum13.3">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="13" />
+          <xsd:fractionDigits value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="string">
+        <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char220">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="220" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="TABLE_OF_ZSD_GOODSMVTRETURN">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="rfc:ZSD_GOODSMVTRETURN" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TABLE_OF_ZSD_GOODSINVOCHERITEM">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="rfc:ZSD_GOODSINVOCHERITEM" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZSD_GOODSINVOCHERITEM">
+        <xsd:sequence>
+          <xsd:element name="MATERIAL" type="rfc:char18" />
+          <xsd:element name="PLANT" type="rfc:char4" />
+          <xsd:element name="STGE_LOC" type="rfc:char4" />
+          <xsd:element name="MOVE_TYPE" type="rfc:char3" />
+          <xsd:element name="ENTRY_QNT" type="rfc:quantum13.3" />
+          <xsd:element name="ENTRY_UOM" type="rfc:unit3" />
+          <xsd:element name="PO_NUMBER" type="rfc:char10" />
+          <xsd:element name="PO_ITEM" type="rfc:numeric5" />
+          <xsd:element name="MVT_IND" type="rfc:char1" />
+          <xsd:element name="MOVE_MAT" type="rfc:char18" />
+          <xsd:element name="MOVE_PLANT" type="rfc:char4" />
+          <xsd:element name="MOVE_STLOC" type="rfc:char4" />
+          <xsd:element name="NB_SLIPS" type="rfc:numeric3" />
+          <xsd:element name="PROD_DATE" type="rfc:date10" />
+          <xsd:element name="BATCH" type="rfc:char10" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZSD_GOODSMVTHEADER">
+        <xsd:sequence>
+          <xsd:element name="BUDAT" type="rfc:date10" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TABLE_OF_ZSD_GOODSMVTHEADER">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="rfc:ZSD_GOODSMVTHEADER" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZSD_GOODSMVTRETURN">
+        <xsd:sequence>
+          <xsd:element name="TYPE" type="rfc:char1" />
+          <xsd:element name="ID" type="rfc:char20" />
+          <xsd:element name="NUMBER" type="rfc:numeric3" />
+          <xsd:element name="MESSAGE" type="rfc:char220" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="rfc.ZPP_GOODSINVOCHER">
+    <wsdl:documentation />
+    <wsdl:part name="parameters" element="rfc:ZPP_GOODSINVOCHER" />
+  </wsdl:message>
+  <wsdl:message name="rfc.ZPP_GOODSINVOCHERResponse">
+    <wsdl:documentation />
+    <wsdl:part name="parameter" element="rfc:ZPP_GOODSINVOCHERResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SI_ZPP_GOODSINVOCHER">
+    <wsdl:documentation />
+    <wsdl:operation name="SI_ZPP_GOODSINVOCHER">
+      <wsdl:documentation />
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_SI_ZPP_GOODSINVOCHER" />
+      </wsp:Policy>
+      <wsdl:input message="p1:rfc.ZPP_GOODSINVOCHER" />
+      <wsdl:output message="p1:rfc.ZPP_GOODSINVOCHERResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SI_ZPP_GOODSINVOCHERBinding" type="p1:SI_ZPP_GOODSINVOCHER">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <wsdl:operation name="SI_ZPP_GOODSINVOCHER">
+      <operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <wsdl:input>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </wsdl:input>
+      <wsdl:output>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SI_ZPP_GOODSINVOCHERService">
+    <wsdl:port name="HTTP_Port" binding="p1:SI_ZPP_GOODSINVOCHERBinding">
+      <address location="http://poprd1:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BS_LIMS_PRD&amp;receiverParty=&amp;receiverService=&amp;interface=SI_ZPP_GOODSINVOCHER&amp;interfaceNamespace=http%3A%2F%2Fwww.kocel.com%2Flims%2Fzpp_goodsinvocher" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </wsdl:port>
+    <wsdl:port name="HTTPS_Port" binding="p1:SI_ZPP_GOODSINVOCHERBinding">
+      <address location="https://poprd1:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BS_LIMS_PRD&amp;receiverParty=&amp;receiverService=&amp;interface=SI_ZPP_GOODSINVOCHER&amp;interfaceNamespace=http%3A%2F%2Fwww.kocel.com%2Flims%2Fzpp_goodsinvocher" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

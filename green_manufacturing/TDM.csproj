@@ -1,0 +1,562 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C5D65CB9-83BB-4F36-B04C-981DBE853AB0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TDM</RootNamespace>
+    <AssemblyName>TDM</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\项目\绿色制造\green_manufacturing\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="api\lhk\bc.aspx" />
+    <Content Include="api\lhk\gr_list.aspx" />
+    <Content Include="api\lhk\lhk_info.aspx" />
+    <Content Include="api\lhk\list.aspx" />
+    <Content Include="api\lhk\make_sl.aspx" />
+    <Content Include="api\lhk\pj_list.aspx" />
+    <Content Include="api\lhk\sh.aspx" />
+    <Content Include="api\lhk\sl_list.aspx" />
+    <Content Include="api\pay\pay_list.aspx" />
+    <Content Include="api\plan\all_list.aspx" />
+    <Content Include="api\plan\bm_plan_list.aspx" />
+    <Content Include="api\plan\hb.aspx" />
+    <Content Include="api\plan\hb_list.aspx" />
+    <Content Include="api\plan\list.aspx" />
+    <Content Include="api\plan\make_plan.aspx" />
+    <Content Include="api\plan\pj.aspx" />
+    <Content Include="api\plan\plan_info.aspx" />
+    <Content Include="api\plan\plan_zd_info.aspx" />
+    <Content Include="api\plan\report.aspx" />
+    <Content Include="api\plan\sh.aspx" />
+    <Content Include="api\public\list.js" />
+    <Content Include="api\public\user_info.aspx" />
+    <Content Include="api\userinfo\info.aspx" />
+    <Content Include="api\userinfo\pwd.aspx" />
+    <Content Include="api\userinfo\team.aspx" />
+    <Content Include="api\userinfo\team_info.aspx" />
+    <Content Include="css\api.css" />
+    <Content Include="css\aui-flex.css" />
+    <Content Include="css\aui-pull-refresh.css" />
+    <Content Include="css\aui-skin-night.css" />
+    <Content Include="css\aui-skin.css" />
+    <Content Include="css\aui-slide.css" />
+    <Content Include="css\aui.css" />
+    <Content Include="css\complanation.css" />
+    <Content Include="css\iconfont.css" />
+    <Content Include="css\public.css" />
+    <Content Include="css\table.css" />
+    <Content Include="image\add.png" />
+    <Content Include="image\barrage_fill.png" />
+    <Content Include="image\createtask_fill.png" />
+    <Content Include="image\mine_fill.png" />
+    <Content Include="image\money.png" />
+    <Content Include="image\task.png" />
+    <Content Include="image\transaction_fill.png" />
+    <Content Include="image\user_jc.png" />
+    <Content Include="js\api.js" />
+    <Content Include="js\aui-actionsheet.js" />
+    <Content Include="js\aui-collapse.js" />
+    <Content Include="js\dialog.js" />
+    <Content Include="js\aui-dialog.js" />
+    <Content Include="js\aui-lazyload.js" />
+    <Content Include="js\aui-list-swipe-backup.js" />
+    <Content Include="js\aui-list-swipe.js" />
+    <Content Include="js\aui-popup-new.js" />
+    <Content Include="js\aui-popup.js" />
+    <Content Include="js\aui-pull-refresh.js" />
+    <Content Include="js\aui-range.js" />
+    <Content Include="js\aui-scroll.js" />
+    <Content Include="js\aui-sharebox.js" />
+    <Content Include="js\aui-skin.js" />
+    <Content Include="js\aui-slide.js" />
+    <Content Include="js\aui-tab.js" />
+    <Content Include="js\aui-toast.js" />
+    <Content Include="js\dingtalk.js" />
+    <Content Include="js\jquery-1.11.0.min.js" />
+    <Content Include="logs\jsapi_ticket.txt" />
+    <Content Include="msg.aspx" />
+    <Content Include="pages2.0\css\font\demo.css" />
+    <Content Include="pages2.0\css\font\iconfont.css" />
+    <Content Include="pages2.0\css\font\iconfont.js" />
+    <Content Include="pages2.0\css\font\iconfont.svg" />
+    <Content Include="pages2.0\css\font\IconFont_files\demo.css" />
+    <Content Include="pages2.0\css\font\IconFont_files\iconfont.css" />
+    <Content Include="pages2.0\css\font\page_plan.css" />
+    <Content Include="pages2.0\css\mobileSelect.css" />
+    <Content Include="pages2.0\css\page_plan.css" />
+    <Content Include="pages2.0\css\public.css" />
+    <Content Include="pages2.0\js\mobileSelect.js" />
+    <Content Include="pages2.0\js\pop\mobileSelect.js" />
+    <Content Include="pages2.0\js\mobileSelect.min.js" />
+    <Content Include="pages2.0\js\plan_list.js" />
+    <Content Include="pages2.0\js\pop\pop.css" />
+    <Content Include="pages2.0\css\style_min_bodys.css" />
+    <Content Include="pages2.0\index.aspx" />
+    <Content Include="pages2.0\js\pop.js" />
+    <Content Include="pages2.0\js\pop\pop.js" />
+    <Content Include="pages2.0\lhk\deed.aspx" />
+    <Content Include="pages2.0\lhk\deedindex.aspx" />
+    <Content Include="pages2.0\lhk\index.aspx" />
+    <Content Include="pages2.0\lhk\team.aspx" />
+    <Content Include="pages2.0\lhk\text.aspx" />
+    <Content Include="pages2.0\payinfo.aspx" />
+    <Content Include="pages2.0\TDM\lhk.aspx" />
+    <Content Include="pages2.0\TDM\plan.aspx" />
+    <Content Include="pages2.0\TDM\p_jx_info.aspx" />
+    <Content Include="pages2.0\user_info.aspx" />
+    <Content Include="pages\kq\index.aspx" />
+    <Content Include="pages\lhk\add.aspx" />
+    <Content Include="pages\lhk\index.aspx" />
+    <Content Include="pages\pay_info\index.aspx" />
+    <Content Include="pages\plan\index.aspx" />
+    <Content Include="pages\plan\make_plan.aspx" />
+    <Content Include="pages\plan\report.aspx" />
+    <Content Include="pages\userinfo\index.aspx" />
+    <Content Include="request_test.aspx" />
+    <Content Include="test.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="api\lhk\bc.aspx.cs">
+      <DependentUpon>bc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\lhk\bc.aspx.designer.cs">
+      <DependentUpon>bc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\lhk\gr_list.aspx.cs">
+      <DependentUpon>gr_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\lhk\gr_list.aspx.designer.cs">
+      <DependentUpon>gr_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\lhk\lhk_info.aspx.cs">
+      <DependentUpon>lhk_info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\lhk\lhk_info.aspx.designer.cs">
+      <DependentUpon>lhk_info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\lhk\list.aspx.cs">
+      <DependentUpon>list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\lhk\list.aspx.designer.cs">
+      <DependentUpon>list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\lhk\make_sl.aspx.cs">
+      <DependentUpon>make_sl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\lhk\make_sl.aspx.designer.cs">
+      <DependentUpon>make_sl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\lhk\pj_list.aspx.cs">
+      <DependentUpon>pj_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\lhk\pj_list.aspx.designer.cs">
+      <DependentUpon>pj_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\lhk\sh.aspx.cs">
+      <DependentUpon>sh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\lhk\sh.aspx.designer.cs">
+      <DependentUpon>sh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\lhk\sl_list.aspx.cs">
+      <DependentUpon>sl_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\lhk\sl_list.aspx.designer.cs">
+      <DependentUpon>sl_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\pay\pay_list.aspx.cs">
+      <DependentUpon>pay_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\pay\pay_list.aspx.designer.cs">
+      <DependentUpon>pay_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\plan\all_list.aspx.cs">
+      <DependentUpon>all_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\plan\all_list.aspx.designer.cs">
+      <DependentUpon>all_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\plan\bm_plan_list.aspx.cs">
+      <DependentUpon>bm_plan_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\plan\bm_plan_list.aspx.designer.cs">
+      <DependentUpon>bm_plan_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\plan\hb.aspx.cs">
+      <DependentUpon>hb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\plan\hb.aspx.designer.cs">
+      <DependentUpon>hb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\plan\hb_list.aspx.cs">
+      <DependentUpon>hb_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\plan\hb_list.aspx.designer.cs">
+      <DependentUpon>hb_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\plan\list.aspx.cs">
+      <DependentUpon>list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\plan\list.aspx.designer.cs">
+      <DependentUpon>list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\plan\make_plan.aspx.cs">
+      <DependentUpon>make_plan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\plan\make_plan.aspx.designer.cs">
+      <DependentUpon>make_plan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\plan\pj.aspx.cs">
+      <DependentUpon>pj.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\plan\pj.aspx.designer.cs">
+      <DependentUpon>pj.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\plan\plan_info.aspx.cs">
+      <DependentUpon>plan_info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\plan\plan_info.aspx.designer.cs">
+      <DependentUpon>plan_info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\plan\plan_zd_info.aspx.cs">
+      <DependentUpon>plan_zd_info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\plan\plan_zd_info.aspx.designer.cs">
+      <DependentUpon>plan_zd_info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\plan\report.aspx.cs">
+      <DependentUpon>report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\plan\report.aspx.designer.cs">
+      <DependentUpon>report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\plan\sh.aspx.cs">
+      <DependentUpon>sh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\plan\sh.aspx.designer.cs">
+      <DependentUpon>sh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\public\jyt_user.cs" />
+    <Compile Include="api\public\user_info.aspx.cs">
+      <DependentUpon>user_info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\public\user_info.aspx.designer.cs">
+      <DependentUpon>user_info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\public\yan.cs" />
+    <Compile Include="api\userinfo\info.aspx.cs">
+      <DependentUpon>info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\userinfo\info.aspx.designer.cs">
+      <DependentUpon>info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\userinfo\pwd.aspx.cs">
+      <DependentUpon>pwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\userinfo\pwd.aspx.designer.cs">
+      <DependentUpon>pwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\userinfo\team.aspx.cs">
+      <DependentUpon>team.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\userinfo\team.aspx.designer.cs">
+      <DependentUpon>team.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\userinfo\team_info.aspx.cs">
+      <DependentUpon>team_info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\userinfo\team_info.aspx.designer.cs">
+      <DependentUpon>team_info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="msg.aspx.cs">
+      <DependentUpon>msg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="msg.aspx.designer.cs">
+      <DependentUpon>msg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Old_App_Code\config\Config.cs" />
+    <Compile Include="Old_App_Code\EnterpriseBusiness\EnterpriseBusiness.cs" />
+    <Compile Include="Old_App_Code\Helper\Helper.cs" />
+    <Compile Include="Old_App_Code\Helper\HttpHelper.cs" />
+    <Compile Include="Old_App_Code\pcdata\pcdata.cs" />
+    <Compile Include="Old_App_Code\pcdata\userdata.cs" />
+    <Compile Include="pages2.0\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages2.0\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages2.0\lhk\deed.aspx.cs">
+      <DependentUpon>deed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages2.0\lhk\deed.aspx.designer.cs">
+      <DependentUpon>deed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages2.0\lhk\deedindex.aspx.cs">
+      <DependentUpon>deedindex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages2.0\lhk\deedindex.aspx.designer.cs">
+      <DependentUpon>deedindex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages2.0\lhk\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages2.0\lhk\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages2.0\lhk\team.aspx.cs">
+      <DependentUpon>team.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages2.0\lhk\team.aspx.designer.cs">
+      <DependentUpon>team.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages2.0\lhk\text.aspx.cs">
+      <DependentUpon>text.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages2.0\lhk\text.aspx.designer.cs">
+      <DependentUpon>text.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages2.0\payinfo.aspx.cs">
+      <DependentUpon>payinfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages2.0\payinfo.aspx.designer.cs">
+      <DependentUpon>payinfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages2.0\TDM\lhk.aspx.cs">
+      <DependentUpon>lhk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages2.0\TDM\lhk.aspx.designer.cs">
+      <DependentUpon>lhk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages2.0\TDM\plan.aspx.cs">
+      <DependentUpon>plan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages2.0\TDM\plan.aspx.designer.cs">
+      <DependentUpon>plan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages2.0\TDM\p_jx_info.aspx.cs">
+      <DependentUpon>p_jx_info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages2.0\TDM\p_jx_info.aspx.designer.cs">
+      <DependentUpon>p_jx_info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages2.0\user_info.aspx.cs">
+      <DependentUpon>user_info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages2.0\user_info.aspx.designer.cs">
+      <DependentUpon>user_info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\kq\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\kq\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\lhk\add.aspx.cs">
+      <DependentUpon>add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\lhk\add.aspx.designer.cs">
+      <DependentUpon>add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\lhk\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\lhk\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\pay_info\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\pay_info\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\plan\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\plan\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\plan\make_plan.aspx.cs">
+      <DependentUpon>make_plan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\plan\make_plan.aspx.designer.cs">
+      <DependentUpon>make_plan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\plan\report.aspx.cs">
+      <DependentUpon>report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\plan\report.aspx.designer.cs">
+      <DependentUpon>report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\userinfo\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\userinfo\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="request_test.aspx.cs">
+      <DependentUpon>request_test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="request_test.aspx.designer.cs">
+      <DependentUpon>request_test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\aui-iconfont.ttf" />
+    <Content Include="css\iconfont.ttf" />
+    <Content Include="pages2.0\css\font\iconfont.eot" />
+    <Content Include="pages2.0\css\font\iconfont.ttf" />
+    <Content Include="pages2.0\css\font\iconfont.woff" />
+    <Content Include="pages2.0\css\mobileSelect.less" />
+    <None Include="Properties\PublishProfiles\green.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4733/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

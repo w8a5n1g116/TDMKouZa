@@ -1,0 +1,172 @@
+﻿body {
+    padding-bottom: 1em;
+}
+
+.menu_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5em 1em;
+    background: #fff;
+    font-size: 0.8em;
+    color: #9A9A9A;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+    .menu_box div {
+        padding-bottom: 0.25em;
+    }
+
+.menu_line {
+    color: #DCDCDC;
+    margin: 0 0.5em;
+    font-size: 1.4em;
+    font-weight: 100;
+}
+
+.add_box {
+    color: #E1543E;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 3px;
+    padding: 0 0.2em;
+    min-width: 4.1em;
+}
+
+    .add_box:active {
+        color: #fff;
+        background: #E1543E;
+    }
+
+    .add_box i {
+        margin-right: 0.2em;
+    }
+
+.type_box {
+    display: flex;
+    flex-direction: row;
+    width: 70vw;
+}
+
+    .type_box div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 12vh;
+    }
+
+.active {
+    color: #E1543E;
+    border-bottom: 2px solid #E1543E;
+}
+
+.plans {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2.5em;
+}
+
+.plan_box {
+    margin-top: 0.5em;
+    margin-bottom: 0.3em;
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    -moz-box-shadow: 2px 3px 12px #ADADAD;
+    -webkit-box-shadow: 2px 3px 12px #ADADAD;
+    box-shadow: 2px 3px 12px #ADADAD;
+}
+
+.info {
+    background: #EFEFEF;
+    display: flex;
+    flex-direction: column;
+    padding: 0.3em;
+    font-size: 0.9em;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.2em 0.5em;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.text {
+    padding: 0 0.5em;
+    height: auto;
+    font-size: 0.8em;
+    text-indent: 2em;
+}
+
+.stage {
+    background: #fff;
+    padding: 0.2em 0.8em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 0.8em;
+}
+
+header {
+    position: fixed;
+}
+
+.none {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #AAAAAA;
+    display: none;
+}
+
+    .none i {
+        font-size: 2em;
+    }
+
+    .none p {
+        color: #AAAAAA;
+    }
+
+.leader_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.5em;
+   
+    display:none;
+}
+
+.leader_text {
+    padding: 0 0.5em;
+    height: auto;
+    font-size: 1.2em;
+}
+
+.leader_box .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ts {
+    font-size:0.8em;
+    margin-right:2em;
+}

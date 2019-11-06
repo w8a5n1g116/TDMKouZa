@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>IconFont</title>
+    <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="iconfont.css">
+</head>
+<body>
+    <div class="main markdown">
+        <h1>IconFont 图标</h1>
+        <ul class="icon_lists clear">
+            
+                <li>
+                <i class="icon iconfont icon-queren"></i>
+                    <div class="name">确认</div>
+                    <div class="fontclass">.icon-queren</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-baoxiu"></i>
+                    <div class="name">报修</div>
+                    <div class="fontclass">.icon-baoxiu</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-it"></i>
+                    <div class="name">it</div>
+                    <div class="fontclass">.icon-it</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-huibao"></i>
+                    <div class="name">汇报</div>
+                    <div class="fontclass">.icon-huibao</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-xinxichaxun"></i>
+                    <div class="name">信息查询</div>
+                    <div class="fontclass">.icon-xinxichaxun</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-ITfuwu"></i>
+                    <div class="name">IT服务</div>
+                    <div class="fontclass">.icon-ITfuwu</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-huibao1"></i>
+                    <div class="name">汇报</div>
+                    <div class="fontclass">.icon-huibao1</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-gongzuohuibao"></i>
+                    <div class="name">工作汇报</div>
+                    <div class="fontclass">.icon-gongzuohuibao</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-xinxiqueren"></i>
+                    <div class="name">信息确认</div>
+                    <div class="fontclass">.icon-xinxiqueren</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-chaxun"></i>
+                    <div class="name">查询</div>
+                    <div class="fontclass">.icon-chaxun</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-niandugongzuogaishu"></i>
+                    <div class="name">IT互联网年度工作总结PPT图标--填充版</div>
+                    <div class="fontclass">.icon-niandugongzuogaishu</div>
+                </li>
+            
+        </ul>
+
+        <h2 id="font-class-">font-class引用</h2>
+        <hr>
+
+        <p>font-class是unicode使用方式的一种变种，主要是解决unicode书写不直观，语意不明确的问题。</p>
+        <p>与unicode使用方式相比，具有如下特点：</p>
+        <ul>
+        <li>兼容性良好，支持ie8+，及所有现代浏览器。</li>
+        <li>相比于unicode语意明确，书写更直观。可以很容易分辨这个icon是什么。</li>
+        <li>因为使用class来定义图标，所以当要替换图标时，只需要修改class里面的unicode引用。</li>
+        <li>不过因为本质上还是使用的字体，所以多色图标还是不支持的。</li>
+        </ul>
+        <p>使用步骤如下：</p>
+        <h3 id="-fontclass-">第一步：引入项目下面生成的fontclass代码：</h3>
+
+
+        <pre><code class="lang-js hljs javascript"><span class="hljs-comment">&lt;link rel="stylesheet" type="text/css" href="./iconfont.css"&gt;</span></code></pre>
+        <h3 id="-">第二步：挑选相应图标并获取类名，应用于页面：</h3>
+        <pre><code class="lang-css hljs">&lt;<span class="hljs-selector-tag">i</span> <span class="hljs-selector-tag">class</span>="<span class="hljs-selector-tag">iconfont</span> <span class="hljs-selector-tag">icon-xxx</span>"&gt;&lt;/<span class="hljs-selector-tag">i</span>&gt;</code></pre>
+        <blockquote>
+        <p>"iconfont"是你项目下的font-family。可以通过编辑项目查看，默认是"iconfont"。</p>
+        </blockquote>
+    </div>
+</body>
+</html>

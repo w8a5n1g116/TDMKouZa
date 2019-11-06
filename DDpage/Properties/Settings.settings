@@ -1,0 +1,69 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DDpage.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DDpage_KmrAppMatChWebReference_SI_ZPP_MATERIAL_REQService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://podev1:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BS_LIMS_DEV&amp;receiverParty=&amp;receiverService=&amp;interface=SI_ZPP_MATERIAL_REQ&amp;interfaceNamespace=http%3A%2F%2Fwww.kocel.com%2Flims%2Fzpp_material_req</Value>
+    </Setting>
+    <Setting Name="DDpage_Get_KmrStorage_PlanList_SI_ZPP_RESB_SenderService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://poprd1:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BS_LIMS_PRD&amp;receiverParty=&amp;receiverService=&amp;interface=SI_ZPP_RESB_Sender&amp;interfaceNamespace=http%3A%2F%2Fwww.kocel.com%2Flims%2Fzpp_resb</Value>
+    </Setting>
+    <Setting Name="DDpage_SendToLineLib_KmrSendMatService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.0.234:8090/Storage/KmrSendMatService.asmx</Value>
+    </Setting>
+    <Setting Name="DDpage_KmrAppComPick_SI_ZPP_GOODSMVTService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://poprd1:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BS_LIMS_PRD&amp;receiverParty=&amp;receiverService=&amp;interface=SI_ZPP_GOODSMVT&amp;interfaceNamespace=http%3A%2F%2Fwww.kocel.com%2Flims%2Fzpp_goodsmvt</Value>
+    </Setting>
+    <Setting Name="DDpage_KmrAppMatCreateRsNo_SI_ZPP_RESERVATION_CREATE_SenderService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://poprd1:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BS_LIMS_PRD&amp;receiverParty=&amp;receiverService=&amp;interface=SI_ZPP_RESERVATION_CREATE_Sender&amp;interfaceNamespace=http%3A%2F%2Fwww.kocel.com%2Flims%2Fzpp_reservation_create</Value>
+    </Setting>
+    <Setting Name="DDpage_KmrAppMatPick_SI_ZPP_MATERIAL_REQService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://poprd1:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BS_LIMS_PRD&amp;receiverParty=&amp;receiverService=&amp;interface=SI_ZPP_MATERIAL_REQ&amp;interfaceNamespace=http%3A%2F%2Fwww.kocel.com%2Flims%2Fzpp_material_req</Value>
+    </Setting>
+    <Setting Name="DDpage_Get_KmrApp_PurOrder_SI_ZDM_EKESService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://poprd1:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BS_LIMS_PRD&amp;receiverParty=&amp;receiverService=&amp;interface=SI_ZDM_EKES&amp;interfaceNamespace=http%3A%2F%2Fwww.kocel.com%2Flims%2Fzdm_ekes</Value>
+    </Setting>
+    <Setting Name="DDpage_Post_KmrApp_CheckIn_SI_ZPP_GOODSINVOCHERService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://poprd1:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BS_LIMS_PRD&amp;receiverParty=&amp;receiverService=&amp;interface=SI_ZPP_GOODSINVOCHER&amp;interfaceNamespace=http%3A%2F%2Fwww.kocel.com%2Flims%2Fzpp_goodsinvocher</Value>
+    </Setting>
+    <Setting Name="DDpage_Post_KmrApp_OutComCostPick_SI_ZPP_GOODSMVT_201Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://poprd1:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BS_LIMS_PRD&amp;receiverParty=&amp;receiverService=&amp;interface=SI_ZPP_GOODSMVT_201&amp;interfaceNamespace=http%3A%2F%2Fwww.kocel.com%2Flims%2Fzpp_goodsmvt_201</Value>
+    </Setting>
+    <Setting Name="DDpage_Get_KmrApp_Inventory_SI_ZDM_INVENTORY_SenderService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://poprd1:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BS_LIMS_PRD&amp;receiverParty=&amp;receiverService=&amp;interface=SI_ZDM_INVENTORY_Sender&amp;interfaceNamespace=http%3A%2F%2Fwww.kocel.com%2Flims%2Fzdm_inventoryinf</Value>
+    </Setting>
+    <Setting Name="DDpage_Post_KmrApp_ComResearchPick_SI_ZPP_GOODSMVT_Z04Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://poprd1:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BS_LIMS_PRD&amp;receiverParty=&amp;receiverService=&amp;interface=SI_ZPP_GOODSMVT_Z04&amp;interfaceNamespace=http%3A%2F%2Fwww.kocel.com%2Flims%2Fzpp_goodsmvt_z04</Value>
+    </Setting>
+    <Setting Name="DDpage_ProductOrderYuLiu_ZZXPRODUCTRESB" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.12.42:8001/sap/bc/srt/rfc/sap/zzxproductresb/800/zzxproductresb/zzxproductresb</Value>
+    </Setting>
+    <Setting Name="DDpage_InTimeStock_ZXREALTIMESTORE" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ERPPRD.YANTAIMOON.COM:8001/sap/bc/srt/rfc/sap/zxrealtimestore/800/zxrealtimestore/zxrealtimestore</Value>
+    </Setting>
+    <Setting Name="DDpage_PlanIn_ZZXPLAN" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.12.42:8001/sap/bc/srt/rfc/sap/zzxplan/800/zzxplan/zzxplan</Value>
+    </Setting>
+    <Setting Name="DDpage_PlanOut_ZZXNOPLAN" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.12.42:8001/sap/bc/srt/rfc/sap/zzxnoplan/800/zzxnoplan/zzxnoplan</Value>
+    </Setting>
+    <Setting Name="DDpage_CoastCenter_ZZXKOSTL201" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.12.42:8001/sap/bc/srt/rfc/sap/zzxkostl201/800/zzxkostl201/zzxkostl201</Value>
+    </Setting>
+    <Setting Name="DDpage_InnerOrder_ZZXMOVEORDER" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.12.42:8001/sap/bc/srt/rfc/sap/zzxmoveorder/800/zzxmoveorder/zzxmoveorder</Value>
+    </Setting>
+    <Setting Name="DDpage_PoRuku_ZPOMIGO" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.12.42:8001/sap/bc/srt/rfc/sap/zpomigo/800/zpomigo/zpomigo</Value>
+    </Setting>
+    <Setting Name="DDpage_PO_ZZX_GETPO" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.12.42:8001/sap/bc/srt/rfc/sap/zzx_getpo/800/zzx_getpo/zzx_getpo</Value>
+    </Setting>
+    <Setting Name="DDpage_YiKu311_ZMOVE311" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.12.42:8001/sap/bc/srt/rfc/sap/zmove311/800/zmove311/zmove311</Value>
+    </Setting>
+    <Setting Name="DDpage_GetSapProductOrder_ZZX_GETORDERCONFIRM" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.12.42:8001/sap/bc/srt/rfc/sap/zzx_getorderconfirm/800/zzx_getorderconfirm/zzx_getorderconfirm</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
